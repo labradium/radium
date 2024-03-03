@@ -1,0 +1,28 @@
+{
+  "name": "radium",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky",
+    "dev:prepare": "pnpm i && pnpm up --latest && pnpm store prune",
+    "build:prepare": "pnpm run format && pnpm run lint && pnpm run build"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "eslint": "^8.57.0",
+    "eslint-config-turbo": "^1.12.4",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.4",
+    "vitest": "^1.3.1"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
