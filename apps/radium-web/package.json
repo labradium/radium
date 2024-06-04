@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "dev:prepare": "pnpm i && pnpm up --latest && pnpm store prune",
-    "ui:add": "pnpm dlx shadcn-ui@latest add",
-    "build:prepare": "pnpm dev:prepare && pnpm exec prettier --write \"**/*.{ts,tsx,md,js,json}\" && next lint && next build"
+    "ui:add": "pnpm dlx shadcn-ui@latest add"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.4.2",

@@ -1,12 +1,44 @@
 {
   "name": "create-radium",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [
+    "react",
+    "nextjs",
+    "tailwindcss",
+    "radix-ui",
+    "astro",
+    "solidjs",
+    "million"
+  ],
+  "description": "Initialize a new project with radium.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vgseven/radium.git",
+    "directory": "packages/create-radium"
   },
-  "keywords": [],
-  "author": "vgseven",
-  "license": "MIT"
+  "author": "Team Silver <contact@vgseven.com>",
+  "license": "MIT",
+  "bin": {
+    "create-radium": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "node ./dist/index.js",
+    "dev:ts": "jiti ./index.ts",
+    "build:dev": "ncc build ./index.ts -w -o dist/",
+    "build": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register"
+  },
+  "devDependencies": {
+    "@clack/core": "^0.3.4",
+    "@clack/prompts": "^0.7.0",
+    "@types/node": "^20.14.1",
+    "@vercel/ncc": "^0.38.1",
+    "jiti": "^1.21.0",
+    "picocolors": "^1.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

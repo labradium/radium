@@ -1,7 +1,7 @@
 import { IconProps } from "@/lib/interfaces/icons";
 import { cn } from "@/lib/utils";
 
-export function BrandIconX({ height, width, className }: IconProps) {
+export function XLogoIcon({ height, width, className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

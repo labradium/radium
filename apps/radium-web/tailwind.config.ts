@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { addVariablesForColors } from "./lib/functions/global-css-variables";
 
 const config = {
   darkMode: ["class"],
@@ -15,9 +14,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
-        jetmono: ["var(--font-jetbrains-mono)"],
+        geistSans: ["var(--font-geist-sans)"],
+        geistMono: ["var(--font-geist-mono)"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -75,7 +73,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 
 export default config;
