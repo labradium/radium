@@ -1,11 +1,11 @@
-import { IconProps } from "@/lib/interfaces/icons";
-import { cn } from "@/lib/utils";
+import { IconProps } from '@/lib/interfaces/icons';
+import { cn } from '@/lib/utils';
 
 export function XLogoIcon({ height, width, className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("icon icon-tabler icon-tabler-brand-x", className)}
+      className={cn('icon icon-tabler icon-tabler-brand-x', className)}
       width={width}
       height={height}
       viewBox="0 0 24 24"
