@@ -1,6 +1,6 @@
 {
   "name": "create-radium",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "keywords": [
     "react",
     "nextjs",
@@ -25,18 +25,16 @@
     "dist"
   ],
   "scripts": {
-    "dev": "node ./dist/index.js",
-    "dev:ts": "jiti ./index.ts",
-    "build:dev": "ncc build ./index.ts -w -o dist/",
+    "dev": "ncc build ./index.ts -w -o dist/",
     "build": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register"
   },
-  "devDependencies": {
-    "@clack/core": "^0.3.4",
+  "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "@types/node": "^20.14.1",
     "@vercel/ncc": "^0.38.1",
-    "jiti": "^1.21.0",
-    "picocolors": "^1.0.1"
+    "jiti": "^1.21.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2"
   },
   "engines": {
     "node": ">=18.0.0"
