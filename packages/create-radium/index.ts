@@ -1,10 +1,7 @@
 import { intro, select, spinner, text } from "@clack/prompts";
-import { exec } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
-import { promisify } from "util";
 
-const execAsync = promisify(exec);
 const s = spinner();
 
 intro(`Initialize New Project With Radium`);
@@ -35,7 +32,9 @@ intro(`Initialize New Project With Radium`);
   console.log("   We recommend you to use TypeScript..");
 
   if (projectConfirm === "new") {
-    console.log(`   Creating New Project ${name.toString()}`);
+    console.log(
+      `   Creating New Project with custom tools and configs are in alpha stage currently, please use existing templates and request custome template on github issues as feature request.`,
+    );
   } else {
     console.log("   Let's Start With Existing Template");
 
@@ -45,44 +44,24 @@ intro(`Initialize New Project With Radium`);
         {
           value: "next-general",
           label:
-            "Next.js Basic Template with TailwindCSS, ShadcnUI, Geist Font, Theme and Folder Structure.",
+            "next.js basic template with tailwindcss, shadcn-ui, geist font, next-theme and proper folder structure.",
         },
         {
-          value: "next-million",
+          value: "react-general",
           label:
-            "Next.js Basic Template but with millionjs and million lint to supercharge speed.",
+            "react.js basic template with tanstack-router, vite, tailwindcss, shadcn-ui, geist font, next-theme and proper folder structure.",
+        },
+        {
+          value: "turborepo-general",
+          label: "turborepo basic template with tailwindcss and bun.",
         },
       ],
     });
 
-    const packageManager = await select({
-      message: "Select Package Manager",
-      options: [
-        {
-          value: "pnpm",
-          label: "pnpm",
-        },
-        {
-          value: "yarn",
-          label: "yarn",
-        },
-        {
-          value: "npm",
-          label: "npm",
-        },
-        {
-          value: "bun",
-          label: "bun",
-        },
-      ],
-    });
-
-    s.start(
-      `Downloading and extracting template ${template} using ${packageManager}...`,
-    );
+    s.start(`Initializing template ${template}...`);
 
     try {
-      const templatePath = path.resolve(__dirname, `./next/${template}`);
+      const templatePath = path.resolve(__dirname, `./templates/${template}`);
 
       const targetPath = path.resolve(process.cwd(), name.toString());
 
@@ -91,27 +70,8 @@ intro(`Initialize New Project With Radium`);
 
       process.chdir(targetPath);
 
-      let installCommand;
-      switch (packageManager) {
-        case "pnpm":
-          installCommand = "pnpm i";
-          break;
-        case "yarn":
-          installCommand = "yarn";
-          break;
-        case "npm":
-          installCommand = "npm i";
-          break;
-        case "bun":
-          installCommand = "bun i";
-          break;
-      }
-
-      await execAsync(installCommand as string);
-
-      s.stop("Template setup completed successfully!");
-      console.log(
-        `Project ${name.toString()} has been set up at ${targetPath}`,
+      s.stop(
+        `cd ${name.toString()} and install dependencies with your favorite package manager (pnpm i, yarn i, npm i, bun i).`,
       );
     } catch (error) {
       s.stop("An error occurred while setting up the template.");
