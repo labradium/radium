@@ -29,12 +29,11 @@ intro(`Initialize New Project With Radium`);
     ],
   });
 
-  console.log("   We recommend you to use TypeScript..");
-
   if (projectConfirm === "new") {
     console.log(
-      `   Creating New Project with custom tools and configs are in alpha stage currently, please use existing templates and request custome template on github issues as feature request.`,
+      `   Creating New Project with custom tools and configs are in alpha stage currently, please use existing templates and request custom templates on GitHub issues as feature requests.`,
     );
+    process.exit(0);
   } else {
     console.log("   Let's Start With Existing Template");
 
@@ -58,24 +57,48 @@ intro(`Initialize New Project With Radium`);
       ],
     });
 
+    const packageManager = await select({
+      message: "Select Package Manager",
+      options: [
+        {
+          value: "pnpm",
+          label: "pnpm",
+        },
+        {
+          value: "yarn",
+          label: "yarn",
+        },
+        {
+          value: "npm",
+          label: "npm",
+        },
+        {
+          value: "bun",
+          label: "bun",
+        },
+      ],
+    });
+
     s.start(`Initializing template ${template}...`);
 
     try {
       const templatePath = path.resolve(__dirname, `./templates/${template}`);
-
       const targetPath = path.resolve(process.cwd(), name.toString());
 
       fs.mkdirSync(targetPath, { recursive: true });
-      fs.cpSync(templatePath, targetPath, { recursive: true });
+      fs.cpSync(templatePath, targetPath, {
+        recursive: true,
+        filter: () => true,
+      });
 
       process.chdir(targetPath);
 
-      s.stop(
-        `cd ${name.toString()} and install dependencies with your favorite package manager (pnpm i, yarn i, npm i, bun i).`,
-      );
+      s.stop(`cd ${name.toString()} and run ${packageManager} install`);
     } catch (error) {
       s.stop("An error occurred while setting up the template.");
       console.error(error);
+    } finally {
+      process.exit(0);
     }
   }
 })();
