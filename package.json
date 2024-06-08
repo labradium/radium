@@ -1,7 +1,7 @@
 {
-  "name": "radium",
+  "name": "init",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.3.0",
   "scripts": {
     "dev": "turbo dev",
     "type-check": "turbo type-check",
@@ -25,7 +25,8 @@
     "node": ">=18.0.0"
   },
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "packages/*",
+    "templates/**",
+    "templates/monorepo/**"
   ]
 }

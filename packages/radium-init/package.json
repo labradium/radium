@@ -1,0 +1,42 @@
+{
+  "name": "radium-init",
+  "version": "0.1.0",
+  "keywords": [
+    "react",
+    "nextjs",
+    "tailwindcss",
+    "radix-ui",
+    "astro",
+    "solidjs",
+    "million"
+  ],
+  "description": "Initialize a new project with radium.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silver-radium/init.git",
+    "directory": "packages/radium-init"
+  },
+  "author": "Team Silver <contact@vgseven.com>",
+  "license": "MIT",
+  "bin": {
+    "create-radium": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup index.ts --watch",
+    "build": "tsup index.ts"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

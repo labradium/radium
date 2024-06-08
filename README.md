@@ -1,1 +1,1 @@
-### Radium, Empowering Developers to Rapidly Ship Projects.
+### Radium Init, Initializing new project in seconds..
