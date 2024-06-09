@@ -7,7 +7,7 @@
     "type-check": "turbo type-check",
     "clean": "turbo clean",
     "lint": "turbo lint",
-    "build": "turbo build",
+    "build": "turbo build && cd monorepo/turborepo-general && turbo build",
     "optimize": "prettier --write \"**/*.{ts,tsx,md,mdx,json,mjs,js}\" && prettier --check \"**/*.{ts,tsx,md,mdx,json,mjs,js}\"",
     "build:prepare": "bun run optimize && bun run lint && bun run build"
   },
@@ -26,7 +26,8 @@
   },
   "workspaces": [
     "packages/*",
-    "templates/**",
-    "templates/monorepo/**"
+    "!monorepo/",
+    "next/*",
+    "react/*"
   ]
 }

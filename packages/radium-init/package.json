@@ -19,7 +19,7 @@
   "author": "Team Silver <contact@vgseven.com>",
   "license": "MIT",
   "bin": {
-    "create-radium": "./dist/index.js"
+    "radium-init": "./dist/index.js"
   },
   "files": [
     "dist"
