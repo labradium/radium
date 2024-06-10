@@ -1,6 +1,6 @@
 {
   "name": "radium-init",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Initialize a new project with radium.",
   "license": "MIT",
   "author": "Team Silver <contact@vgseven.com>",
@@ -36,7 +36,7 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "typecheck": "tsc",
+    "lint": "tsc",
     "build": "tsup",
     "dev": "tsup --watch",
     "clean": "rm -rf dist .turbo node_modules",
@@ -51,6 +51,7 @@
     "picocolors": "^1.0.1"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.5",
     "@types/node": "^20.14.2",
     "tsup": "^8.1.0",
     "typescript": "^5.4.5"

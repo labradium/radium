@@ -27,7 +27,7 @@
     "node": ">=18.0.0"
   },
   "workspaces": [
-    "packages/*",
+    "cli",
     "!monorepo/",
     "next/*",
     "react/*"

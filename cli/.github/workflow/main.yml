@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bun/action-setup-bun@v1
+        with:
+          version: latest
+      - uses: actions/setup-bun@v1
+        with:
+          bun-version: 1.1.1
+          cache: "bun"
+      - run: bun install --frozen-lockfile
+      - run: bun run lint && bun run build
