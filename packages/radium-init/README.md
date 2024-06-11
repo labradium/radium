@@ -1,13 +1,3 @@
-### Create new Project with Radium
+# radium-init
 
-##### with pnpm
-
-```sh
-pnpm dlx radium-init@latest
-```
-
-##### with bun
-
-```sh
-bunx radium-init@latest
-```
+A CLI tool to initialize a new Radium project.
