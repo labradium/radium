@@ -25,5 +25,5 @@
     "noPropertyAccessFromIndexSignature": false
   },
   "exclude": ["node_modules", "dist", ".turbo"],
-  "include": ["templates"]
+  "include": ["templates", "scripts", "packages"]
 }

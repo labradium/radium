@@ -28,21 +28,12 @@ async function main() {
           },
         }),
       chooseTemplate: () =>
-        terminal.select({
-          message: "Select Template",
-          initialValue: "next-general",
-          options: [
-            {
-              value: "next-general",
-              label:
-                "Next.js (TailwindCSS + shadcn-ui + Geist Font + Next-Theme",
-            },
-            {
-              value: "react-general",
-              label:
-                "React.js Tanstack-Router + Vite + TailwindCSS + shadcn-ui + Geist Font + Next-Theme",
-            },
-          ],
+        terminal.text({
+          message: "Enter the name of the template you want to initialize :- ",
+          placeholder: "next-general",
+          validate: (value) => {
+            if (value.length === 0) return `Template name is required!`;
+          },
         }),
       choosePackageManager: () =>
         terminal.select({

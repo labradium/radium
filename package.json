@@ -1,23 +1,27 @@
 {
   "name": "init",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.1.0",
   "scripts": {
     "dev": "turbo dev",
     "type-check": "turbo type-check",
     "clean": "turbo clean",
     "lint": "turbo lint",
     "build": "turbo build",
+    "prepare": "husky",
     "optimize": "prettier --write \"**/*.{ts,tsx,md,mdx,json,mjs,js}\" && prettier --check \"**/*.{ts,tsx,md,mdx,json,mjs,js}\"",
     "build:prepare": "bun run optimize && bun run lint && bun run build",
-    "publish:cli": "bun run build:prepare && npm publish --workspace=packages/radium-init",
-    "release": "changeset publish"
+    "release": "changeset version",
+    "pub:next": "bun run build:prepare && changeset publish --tag next",
+    "pub:release": "bun run build:prepare && changeset publish --tag latest"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.5",
+    "@types/bun": "^1.1.3",
     "eslint": "^8.57.0",
     "eslint-config-turbo": "^2.0.3",
     "eslint-plugin-only-warn": "^1.1.0",
+    "husky": "^9.0.11",
     "prettier": "^3.3.1",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.6.1",
@@ -25,7 +29,7 @@
   },
   "packageManager": "bun@1.1.2",
   "engines": {
-    "node": ">=18.0.0"
+    "bun": ">=1.1"
   },
   "workspaces": [
     "packages/*",

@@ -6,7 +6,7 @@ const { resolve } = require("node:path");
 const project = resolve(process.cwd(), "tsconfig.json");
 
 module.exports = {
-  ignorePatterns: ["apps/**", "packages/**"],
+  ignorePatterns: ["templates/**", "packages/**", "scripts/**"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: true,
