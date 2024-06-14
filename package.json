@@ -23,13 +23,12 @@
   "type": "module",
   "exports": "./dist/index.js",
   "bin": {
-    "radium-init": "./dist/index.js"
+    "create-radium": "./dist/index.js"
   },
   "files": [
     "dist",
     "templates",
     "README.md",
-    "LICENSE",
     "package.json"
   ],
   "engines": {
@@ -39,7 +38,7 @@
     "lint": "tsc",
     "build": "bun build index.ts --outdir ./dist --target node --format esm",
     "optimize": "prettier --write \"**/*.{ts,json,mjs,cjs,js,md}\" && prettier --check \"**/*.{ts,json,mjs,cjs,js,md}\"",
-    "build:prepare": "bun run optimize && bun run build && bun run scripts/build.ts",
+    "build:prepare": "bun run optimize && bun run build",
     "release": "changeset publish --tag latest",
     "prepare": "husky"
   },
