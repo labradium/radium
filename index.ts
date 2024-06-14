@@ -87,7 +87,7 @@ export async function main() {
     const template =
       project.chooseBase === "next" ? "next-general" : "react-general";
 
-    await copyDirectory(`./templates/${template}`, `./${project.name}`);
+    await copyDirectory(`../templates/${template}`, `./${project.name}`);
 
     await updatePackageJson(`./${project.name}`, project.name);
     terminal.note(

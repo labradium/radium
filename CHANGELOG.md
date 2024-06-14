@@ -1,5 +1,11 @@
 # create-radium
 
+## 0.1.1
+
+### Patch Changes
+
+- package.json update
+
 ## 0.1.0
 
 ### Minor Changes
