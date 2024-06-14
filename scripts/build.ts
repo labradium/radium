@@ -18,4 +18,9 @@ async function copyDirectory(src: string, dest: string) {
   }
 }
 
-copyDirectory("", "");
+const sourceDir = "./templates";
+const destinationDir = "./dist/templates";
+
+copyDirectory(sourceDir, destinationDir)
+  .then(() => console.log("Folder copied successfully!"))
+  .catch((err) => console.error("Error copying folder:", err));
