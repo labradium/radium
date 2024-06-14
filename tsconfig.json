@@ -2,13 +2,11 @@
   "include": ["eslint.config.mjs", "prettier.config.mjs"],
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["ESNext"],
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": true,
-    "outDir": "./dist",
     "noEmit": true,
     "declaration": true,
     "declarationMap": true,
@@ -26,7 +24,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "exclude": ["templates", "dist", "node_modules"]
 }

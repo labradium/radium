@@ -8,7 +8,7 @@ import { packageInstall } from "./lib/package-install";
 
 const s = terminal.spinner();
 
-async function main() {
+export async function main() {
   console.clear();
 
   await setTimeout(1000);
