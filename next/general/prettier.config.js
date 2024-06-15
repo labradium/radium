@@ -1,8 +1,12 @@
-module.exports = {
-  bracketSpacing: true,
+const config = {
+  arrowParens: "always",
+  printWidth: 80,
+  singleQuote: false,
+  jsxSingleQuote: false,
   semi: true,
   trailingComma: "all",
-  printWidth: 80,
   tabWidth: 2,
   plugins: ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
 };
+
+export default config;

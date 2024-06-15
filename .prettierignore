@@ -1,9 +1,9 @@
-# prettierignore files
-
 .vscode
 .next
 .vercel
 .env
+.changeset
+.husky
 
 node_modules
 build

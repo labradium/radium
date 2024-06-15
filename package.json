@@ -1,7 +1,11 @@
 {
   "name": "radium-templates",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "A collection of templates for Radium...",
+  "author": "vgseven <contact@vgseven.com> (https://vgseven.com)",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -13,7 +17,7 @@
     "@changesets/cli": "^2.27.5",
     "@types/bun": "^1.1.4",
     "husky": "^9.0.11",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.2",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.6.4",
     "turbo": "^2.0.4",

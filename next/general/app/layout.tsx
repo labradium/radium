@@ -1,28 +1,28 @@
-import { GeistSansFont } from "@/lib/fonts";
+import { GeistMonoFont, GeistSansFont } from "@/lib/fonts";
 import { ThemeProvider } from "@/lib/functions/theme-providers";
 import "@/styles/root-layout.css";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Radium Next.js Template",
-  description: "A Template Used by Teams for almost every project.",
+  title: "Next.js General Template by Radium",
+  description: "An General Next.js Template by Radium.",
   icons: {
     icon: "favicon.png",
   },
   openGraph: {
-    title: "Radium Next.js Template",
-    description: "A Template Used by Teams for almost every project.",
+    title: "Next.js General Template by Radium",
+    description: "An General Next.js Template by Radium.",
     url: "https://radium.vgseven.com",
     siteName: "Radium",
     images: [
       {
-        url: "https://eo4grnhr9puxdgdq.public.blob.vercel-storage.com/vgseven-company-og/vgseven-company-og.svg",
+        url: "https://odouepjkxheu5esn.public.blob.vercel-storage.com/silvercompany/make-happen.jpg",
         width: 800,
         height: 600,
       },
       {
-        url: "https://eo4grnhr9puxdgdq.public.blob.vercel-storage.com/vgseven-company-og/vgseven-company-og.svg",
+        url: "https://odouepjkxheu5esn.public.blob.vercel-storage.com/silvercompany/make-happen.jpg",
         width: 1800,
         height: 1600,
         alt: "Radium",
@@ -33,10 +33,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Radium",
-    description: "A Template Used by Team Radium for almost every project.",
+    title: "Next.js General Template by Radium",
+    description: "An General Next.js Template by Radium.",
     images: [
-      "https://eo4grnhr9puxdgdq.public.blob.vercel-storage.com/vgseven-company-og/vgseven-company-og.svg",
+      "https://odouepjkxheu5esn.public.blob.vercel-storage.com/silvercompany/make-happen.jpg",
     ],
   },
   metadataBase: new URL("https://radium.vgseven.com"),
@@ -53,10 +53,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${GeistSansFont.variable}`}
+      className={`${GeistSansFont.variable} ${GeistMonoFont.variable} font-geistSans`}
       suppressHydrationWarning
     >
-      <body className={"font-mono"}>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
