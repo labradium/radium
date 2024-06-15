@@ -1,0 +1,14 @@
+# prettierignore files
+
+.vscode
+.next
+.vercel
+.env
+
+# builds
+node_modules
+build
+drizzle
+
+# generated files
+routeTree.gen.ts

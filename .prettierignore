@@ -1,0 +1,10 @@
+# prettierignore files
+
+.vscode
+.next
+.vercel
+.env
+
+node_modules
+build
+drizzle
