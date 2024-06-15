@@ -1,6 +1,6 @@
 {
   "name": "radium-templates",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -11,7 +11,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "optimize": "prettier --write \"**/*.{ts,tsx,js,jsx,json,mjs,cjs,mdx,md}\" && prettier --check \"**/*.{ts,tsx,js,jsx,json,mjs,cjs,mdx,md}\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:prepare": "bun run optimize && bun run lint && bun run build"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.5",
