@@ -15,7 +15,7 @@ jobs:
     steps:
       # Check out the repository code
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Set up Bun with the latest version
       - name: Set up Bun (latest)
