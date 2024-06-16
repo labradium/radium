@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 import * as terminal from "@clack/prompts";
+import path from "path";
 import color from "picocolors";
 import { setTimeout } from "timers/promises";
 import { copyDirectory } from "./lib/copy-dir";
@@ -85,17 +88,25 @@ async function createRadium() {
 
   try {
     s.start("Initializing Project");
-    await copyDirectory(
+
+    const templatePath = path.resolve(
+      __dirname,
       `./templates/${project.chooseTemplate}`,
-      `./${project.name}/`,
+    );
+    await copyDirectory(
+      templatePath,
+      path.resolve(process.cwd(), project.name),
     );
 
     await setTimeout(3000);
-    await updatePackageJson(`./${project.name}`, project.name);
+    await updatePackageJson(
+      path.resolve(process.cwd(), project.name),
+      project.name,
+    );
 
     s.stop("Project initialized successfully!");
   } catch (error) {
-    terminal.note("Project Initialization Failed", `Error: ${error}`);
+    terminal.note(`Error: ${error}`, "Project Initialization Failed");
   }
 
   try {
@@ -103,12 +114,15 @@ async function createRadium() {
       s.start(`Installing Packages via ${project.choosePackageManager}`);
 
       await setTimeout(2000);
-      await packageInstall(`${project.name}`, project.choosePackageManager);
+      await packageInstall(
+        path.resolve(process.cwd(), project.name),
+        project.choosePackageManager,
+      );
 
       s.stop("Packages Installed Successfully..");
     }
   } catch (error) {
-    terminal.note("Package Installation Failed", `Error: ${error}`);
+    terminal.note(`Error: ${error}`, "Package Installation Failed");
   }
 
   try {
@@ -116,7 +130,7 @@ async function createRadium() {
 
     await setTimeout(2000);
 
-    await gitInit(`${project.name}`);
+    await gitInit(path.resolve(process.cwd(), project.name));
 
     s.stop("Git initialized");
   } catch (error) {

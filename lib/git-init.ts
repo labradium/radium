@@ -1,11 +1,10 @@
-import * as path from "path";
-import { runCommand } from "../helpers/run-command";
+import { exec } from "child_process";
+import path from "path";
+import { promisify } from "util";
 
-export async function gitInit(directory: string): Promise<void> {
-  const resolvedPath = path.resolve(directory);
+const execAsync = promisify(exec);
 
-  await runCommand("git", ["init"], resolvedPath);
-  await runCommand("git", ["checkout", "-b", "main"], resolvedPath);
-  await runCommand("git", ["add", "."], resolvedPath);
-  await runCommand("git", ["commit", "-m", "init"], resolvedPath);
+export async function gitInit(projectPath: string): Promise<void> {
+  const fullPath = path.resolve(process.cwd(), projectPath);
+  await execAsync(`git init ${fullPath}`);
 }
