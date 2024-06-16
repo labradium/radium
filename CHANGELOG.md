@@ -1,5 +1,11 @@
 # create-radium
 
+## 0.4.0
+
+### Minor Changes
+
+- cli ready and ship with mvp version.
+
 ## 0.1.1
 
 ### Patch Changes
