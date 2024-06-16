@@ -36,5 +36,5 @@ jobs:
           commit: 'chore: release'
           title: 'chore: release'
         env:
-          ACCESS_GITHUB_TOKEN: ${{ secrets.ACCESS_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
