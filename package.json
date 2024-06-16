@@ -1,6 +1,6 @@
 {
   "name": "create-radium",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Initialize a new project with radium.",
   "license": "MIT",
   "author": "VGSEVEN <contact@vgseven.com>",
@@ -27,7 +27,6 @@
   },
   "files": [
     "dist",
-    "templates",
     "README.md",
     "package.json"
   ],

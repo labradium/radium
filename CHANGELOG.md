@@ -1,5 +1,11 @@
 # create-radium
 
+## 0.4.2
+
+### Patch Changes
+
+- fix: templates folder rm from files of package.json and copied to dist using build script
+
 ## 0.4.1
 
 ### Patch Changes

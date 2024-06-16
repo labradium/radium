@@ -85,7 +85,7 @@ async function createRadium() {
   try {
     const template = project.chooseTemplate;
 
-    await copyDirectory(`../templates/${template}`, `./${project.name}`);
+    await copyDirectory(`./templates/${template}`, `./${project.name}`);
 
     await updatePackageJson(`./${project.name}`, project.name);
     terminal.note(
