@@ -1,5 +1,11 @@
 # create-radium
 
+## 0.4.1
+
+### Patch Changes
+
+- fix: build-dir template path fix
+
 ## 0.4.0
 
 ### Minor Changes
