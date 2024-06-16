@@ -1,5 +1,11 @@
 # create-radium
 
+## 0.5.0
+
+### Minor Changes
+
+- 3dc2193: perf: performance improved by reducing dependencies and code optimization
+
 ## 0.4.2
 
 ### Patch Changes
