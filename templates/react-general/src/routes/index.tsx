@@ -13,7 +13,11 @@ function Home() {
       className={"relative flex h-screen flex-col items-center justify-center"}
     >
       <h1 className={"text-5xl"}>Radium React.js Template</h1>
-      <a href={"https://github.com/vgseven/radium"} target={"_blank"}>
+      <a
+        href={"https://github.com/vgseven/radium"}
+        target={"_blank"}
+        className={"mb-6"}
+      >
         <Button className={"mt-6 rounded-full"}>
           <GitHubLogoIcon className={"mx-2"} /> Star on GitHub
         </Button>

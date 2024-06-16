@@ -1,17 +1,14 @@
 import * as terminal from "@clack/prompts";
-import { setTimeout } from "node:timers/promises";
 import color from "picocolors";
-import { copyDirectory } from "./lib/copy-template";
+import { copyDirectory } from "./lib/copy-dir";
 import { gitInit } from "./lib/git-init";
-import { updatePackageJson } from "./lib/modify-packagejson";
 import { packageInstall } from "./lib/package-install";
+import { updatePackageJson } from "./lib/update-pkg";
 
 const s = terminal.spinner();
 
-export async function main() {
+async function createRadium() {
   console.clear();
-
-  await setTimeout(1000);
 
   terminal.intro(
     `${color.bgCyan(color.black(" Initialize New Project With Radium, Let's Get Started! "))}`,
@@ -24,24 +21,26 @@ export async function main() {
           message: "What is the name of your project?",
           placeholder: "radium",
           validate: (value) => {
-            if (value.length === 0) return `Project name is required!`;
+            if (value.length === 0) return "Project name is required!";
           },
         }),
       note: () => {
         terminal.note("We use TypeScript by default..", "For Type Safety");
       },
-      chooseBase: () =>
+      chooseTemplate: () =>
         terminal.select({
           message: "Select Base Framework or Library",
           initialValue: "Next.js",
           options: [
             {
-              value: "next",
-              label: "Next.js",
+              value: "next-general",
+              label:
+                "General Next.js template with TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier, Next-Theme and Proper Folder Structure.",
             },
             {
-              value: "react",
-              label: "React.js",
+              value: "react-general",
+              label:
+                "General React.js template with Vite, Tanstack Router, TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier, Next-Theme and Proper Folder Structure.",
             },
           ],
         }),
@@ -84,10 +83,9 @@ export async function main() {
   );
 
   try {
-    const template =
-      project.chooseBase === "next" ? "next-general" : "react-general";
+    const template = project.chooseTemplate;
 
-    await copyDirectory(`../templates/${template}`, `./${project.name}`);
+    await copyDirectory(`./templates/${template}`, `./${project.name}`);
 
     await updatePackageJson(`./${project.name}`, project.name);
     terminal.note(
@@ -112,13 +110,18 @@ export async function main() {
     terminal.note("Failed", `Error: ${err}`);
   }
 
-  let nextSteps = `cd ${project.name}        \n${project.install ? "" : `${project.choosePackageManager} install\n`}${project.choosePackageManager} dev`;
+  const nextSteps = `cd ${project.name}        \n${project.install ? "" : `${project.choosePackageManager} install\n`}${project.choosePackageManager} dev`;
 
   terminal.note(nextSteps, "Next steps.");
 
   terminal.outro(
     `Problems? ${color.underline(color.cyan("https://github.com/silver-radium/create-radium/issues"))}`,
   );
+
+  process.exit(0);
 }
 
-main().catch(console.error);
+createRadium().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

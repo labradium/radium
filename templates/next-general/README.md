@@ -1,13 +1,13 @@
-## Radium React.js General Template
+## Radium Next.js General Template
 
-#### Get Started
+### Get Started
 
 ```sh
-bunx create-radium@latest
+bunx create-next-app@latest -e https://github.com/silver-radium/templates/tree/main/next/general
 ```
 
 ```sh
-choose exiting template next-general
+cd radium-app
 ```
 
 ```sh
@@ -26,13 +26,28 @@ bun run dev
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [Bun](https://bun.sh/)
+- [Geist Font](https://vercel.com/font)
+- [Next Themes](https://next-themes.vercel.app/)
 
-##### Import statements and CSS utility classes sorted using prettier
+### Add-Ons
+
+- Import statements and TailwindCSS utility classes sorted using prettier-plugins.
+- Dark and Light themes added using next-themes.
+- Proper folder structure to function properly.
+- Remote images added to work with Vercel Storage.
+- Auto-Generated robots.txt and sitemap.xml added.
+- Layout setup for SEO.
+- OG images support added.
 
 ### Structure
 
 - `app` : used for routes and api's
 - `lib` : used for hooks, utils, functions, configs, fonts etc.
 - `styles` : used for layout css styles
-- `ui` : used for componenets, primitives and icons.
+- `ui` : used to hold componenets, primitives and icons.
+- `ui/components` : used for components (components designed using `shadcn-ui` components and other resuable components)
+- `ui/primitives` : used for primitives (`shadcn-ui` components)
+
+### Report Bug or Feature Request
+
+Please [create an issue](https://github.com/silver-radium/templates/issues/new) for bug reports or feature requests.

@@ -1,10 +1,17 @@
+# prettierignore files
+
 .changeset
+.husky
 .github
-.turbo
 .vscode
-dist
+.next
+.vercel
+.env
+
+# builds
 node_modules
+build
+dist
 bun.lockb
-.npmrc
-.gitignore
 templates
+bun.lockb
