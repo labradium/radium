@@ -1,5 +1,11 @@
 # create-radium
 
+## 0.6.0
+
+### Minor Changes
+
+- fix: \_\_dir issues resolved
+
 ## 0.5.0
 
 ### Minor Changes
