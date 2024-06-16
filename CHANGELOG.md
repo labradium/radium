@@ -1,5 +1,11 @@
 # create-radium
 
+## 0.6.1
+
+### Patch Changes
+
+- chore: build-publish-release workflow config
+
 ## 0.6.0
 
 ### Minor Changes
