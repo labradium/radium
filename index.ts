@@ -1,5 +1,6 @@
 import * as terminal from "@clack/prompts";
 import color from "picocolors";
+import { setTimeout } from "timers/promises";
 import { copyDirectory } from "./lib/copy-dir";
 import { gitInit } from "./lib/git-init";
 import { packageInstall } from "./lib/package-install";
@@ -30,17 +31,17 @@ async function createRadium() {
       chooseTemplate: () =>
         terminal.select({
           message: "Select Base Framework or Library",
-          initialValue: "Next.js",
+          initialValue: "next-general",
           options: [
             {
               value: "next-general",
               label:
-                "General Next.js template with TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier, Next-Theme and Proper Folder Structure.",
+                "Next.js + TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier and Next-Theme..",
             },
             {
               value: "react-general",
               label:
-                "General React.js template with Vite, Tanstack Router, TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier, Next-Theme and Proper Folder Structure.",
+                "React.js + Vite, Tanstack Router, TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier and Next-Theme..",
             },
           ],
         }),
@@ -83,33 +84,46 @@ async function createRadium() {
   );
 
   try {
-    const template = project.chooseTemplate;
-
-    await copyDirectory(`./templates/${template}`, `./${project.name}`);
-
-    await updatePackageJson(`./${project.name}`, project.name);
-    terminal.note(
-      `${template} Template Initialized successfully!`,
-      "Congratulations!",
+    s.start("Initializing Project");
+    await copyDirectory(
+      `./templates/${project.chooseTemplate}`,
+      `./${project.name}/`,
     );
 
-    if (project.install) {
-      s.start(`Installing via ${project.choosePackageManager}`);
+    await setTimeout(3000);
+    await updatePackageJson(`./${project.name}`, project.name);
 
-      packageInstall(`./${project.name}`, project.choosePackageManager);
-
-      s.stop("Packages installed Successfully..");
-    }
-
-    s.start("Initialising Git");
-
-    gitInit(`${project.name}`);
-
-    s.stop("Git initialized");
-  } catch (err) {
-    terminal.note("Failed", `Error: ${err}`);
+    s.stop("Project initialized successfully!");
+  } catch (error) {
+    terminal.note("Project Initialization Failed", `Error: ${error}`);
   }
 
+  try {
+    if (project.install) {
+      s.start(`Installing Packages via ${project.choosePackageManager}`);
+
+      await setTimeout(2000);
+      await packageInstall(`${project.name}`, project.choosePackageManager);
+
+      s.stop("Packages Installed Successfully..");
+    }
+  } catch (error) {
+    terminal.note("Package Installation Failed", `Error: ${error}`);
+  }
+
+  try {
+    s.start("Initialising Git");
+
+    await setTimeout(2000);
+
+    await gitInit(`${project.name}`);
+
+    s.stop("Git initialized");
+  } catch (error) {
+    terminal.note("Git Initialization Failed", `Error: ${error}`);
+  }
+
+  await setTimeout(1000);
   const nextSteps = `cd ${project.name}        \n${project.install ? "" : `${project.choosePackageManager} install\n`}${project.choosePackageManager} dev`;
 
   terminal.note(nextSteps, "Next steps.");

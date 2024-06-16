@@ -37,7 +37,7 @@
     "lint": "eslint --no-warn-ignored",
     "lint:check": "bunx @eslint/config-inspector@latest",
     "lint:fix": "eslint --fix --no-warn-ignored",
-    "build": "bun build index.ts --outdir ./dist --target node --format esm",
+    "build": "bun build index.ts --outdir ./dist --target node --format esm && bun run build.ts",
     "optimize": "prettier --write \"**/*.{ts,json,js,md}\" && prettier --check \"**/*.{ts,json,js,md}\"",
     "build:prepare": "bun run optimize && bun run lint && bun run lint:fix && bun run build",
     "release": "changeset publish --tag latest",
@@ -45,17 +45,16 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
+    "picocolors": "^1.0.1"
+  },
+  "devDependencies": {
+    "globals": "^15.5.0",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.5.0",
     "@typescript-eslint/eslint-plugin": "^7.13.0",
     "@typescript-eslint/parser": "^7.13.0",
-    "eslint": "^9.5.0",
     "fs-extra": "^11.2.0",
-    "globals": "^15.5.0",
-    "picocolors": "^1.0.1",
-    "typescript-eslint": "^7.13.0"
-  },
-  "devDependencies": {
+    "eslint": "^9.5.0",
     "@changesets/cli": "^2.27.5",
     "@types/bun": "^1.1.4",
     "@types/eslint": "^8.56.10",
