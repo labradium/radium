@@ -1,5 +1,15 @@
 # create-radium
 
+## 0.6.3
+
+### Patch Changes
+
+- [`72bb064`](https://github.com/silver-radium/create-radium/commit/72bb064b53c42bea0746cf85c6afabf266b051c2) Thanks [@vgseven](https://github.com/vgseven)! - chore: workflow errors fixed
+
+- [`e27b272`](https://github.com/silver-radium/create-radium/commit/e27b2720b11a9f3adcac77dbc1f0dd981496c924) Thanks [@vgseven](https://github.com/vgseven)! - chore: workflow errors fixed 01
+
+- [`4bf0d63`](https://github.com/silver-radium/create-radium/commit/4bf0d639bb22e8dde553acab4d8f20201c32e177) Thanks [@vgseven](https://github.com/vgseven)! - perf: react-general eslint issues resolved and updated to latest version 9
+
 ## 0.6.2
 
 ### Patch Changes
