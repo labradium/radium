@@ -89,13 +89,9 @@ async function createRadium() {
   try {
     s.start("Initializing Project");
 
-    const templatePath = path.resolve(
-      __dirname,
-      `./templates/${project.chooseTemplate}`,
-    );
     await copyDirectory(
-      templatePath,
-      path.resolve(process.cwd(), project.name),
+      `./templates/${project.chooseTemplate}`,
+      `${project.name}`,
     );
 
     await setTimeout(3000);
@@ -114,10 +110,7 @@ async function createRadium() {
       s.start(`Installing Packages via ${project.choosePackageManager}`);
 
       await setTimeout(2000);
-      await packageInstall(
-        path.resolve(process.cwd(), project.name),
-        project.choosePackageManager,
-      );
+      await packageInstall(project.name, project.choosePackageManager);
 
       s.stop("Packages Installed Successfully..");
     }

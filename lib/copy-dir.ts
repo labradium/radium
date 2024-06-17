@@ -1,20 +1,27 @@
-import fs from "fs";
-import ncp from "ncp";
-import { promisify } from "util";
+import * as fs from "fs";
+import * as path from "path";
 
-const copy = promisify(ncp);
+export async function copyDirectory(src: string, dest: string) {
+  const srcDirPath = path.resolve(src);
 
-export async function copyDirectory(
-  source: string,
-  destination: string,
-): Promise<void> {
-  if (!fs.existsSync(source)) {
-    throw new Error(`Source directory does not exist: ${source}`);
+  if (await fs.promises.exists(dest)) {
+    console.log("Directory already exists:", dest);
+  } else {
+    await fs.promises.mkdir(dest);
+
+    const entries = await fs.promises.readdir(srcDirPath, {
+      withFileTypes: true,
+    });
+
+    for (const entry of entries) {
+      const srcPath = path.join(src, entry.name);
+      const destPath = path.join(dest, entry.name);
+
+      if (entry.isDirectory()) {
+        await copyDirectory(srcPath, destPath);
+      } else {
+        await fs.promises.copyFile(srcPath, destPath);
+      }
+    }
   }
-
-  if (!fs.existsSync(destination)) {
-    fs.mkdirSync(destination, { recursive: true });
-  }
-
-  await copy(source, destination);
 }

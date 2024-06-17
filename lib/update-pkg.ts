@@ -10,9 +10,6 @@ export async function updatePackageJson(
     projectPath,
     "package.json",
   );
-  if (!fs.existsSync(packageJsonPath)) {
-    throw new Error(`package.json not found in ${packageJsonPath}`);
-  }
 
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
   packageJson.name = projectName;
