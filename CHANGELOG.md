@@ -1,5 +1,11 @@
 # create-radium
 
+## 0.6.2
+
+### Patch Changes
+
+- [`ec87ddb`](https://github.com/silver-radium/create-radium/commit/ec87ddbd65687dd94cc4ac85616972c88fca531f) Thanks [@vgseven](https://github.com/vgseven)! - chore: workflow errors fixed
+
 ## 0.6.1
 
 ### Patch Changes
