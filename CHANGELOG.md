@@ -1,5 +1,17 @@
 # create-radium
 
+## 0.7.0
+
+### Minor Changes
+
+- [`184357a`](https://github.com/silver-radium/create-radium/commit/184357ac64c852c0f160b2873227fac50e196276) Thanks [@vgseven](https://github.com/vgseven)! - fix: cli functions errors resolved
+
+- [`0ffbc6e`](https://github.com/silver-radium/create-radium/commit/0ffbc6ef452b8a269f67f9857b0add014a5b6810) Thanks [@vgseven](https://github.com/vgseven)! - fix: cli functions errors resolutions
+
+### Patch Changes
+
+- [`c7c6cee`](https://github.com/silver-radium/create-radium/commit/c7c6ceeaa180ee4098ab751477a181b16a96c2b3) Thanks [@vgseven](https://github.com/vgseven)! - chore: workflow issues resolved
+
 ## 0.6.3
 
 ### Patch Changes
