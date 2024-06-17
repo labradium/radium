@@ -33,8 +33,15 @@ jobs:
       - name: build before release
         run: bun run build:prepare
 
-      - name: Create release pull request and publish to npm
+      - name: Check for existing release PR
+        id: check_pr
+        run: |
+          prs=$(gh pr list --repo ${{ github.repository }} --label "release" --state open --json number --jq '.[0].number')
+          echo "pr_number=${prs}" >> $GITHUB_ENV
+
+      - name: Create or update release pull request and publish to npm
         id: changeset
+        if: steps.check_pr.outputs.pr_number == ''
         uses: changesets/action@v1
         with:
           commit: "chore(release): version packages"
@@ -45,3 +52,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_ENV: "production"
+
+      - name: Update existing release pull request
+        if: steps.check_pr.outputs.pr_number != ''
+        run: |
+          gh pr edit ${{ env.pr_number }} --body "Updated with latest changes."
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
