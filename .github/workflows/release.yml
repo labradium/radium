@@ -5,11 +5,19 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  packages: write
+  deployments: write
+
 jobs:
   release:
     if: ${{ github.repository_owner == 'silver-radium' }}
     name: Release
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
