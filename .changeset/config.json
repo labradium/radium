@@ -6,7 +6,7 @@
       "repo": "silver-radium/create-radium"
     }
   ],
-  "commit": true,
+  "commit": false,
   "fixed": [],
   "linked": [],
   "access": "public",
