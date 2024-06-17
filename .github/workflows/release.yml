@@ -5,36 +5,38 @@ on:
     branches:
       - main
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
 jobs:
   release:
+    if: ${{ github.repository_owner == 'silver-radium' }}
     name: Release
     runs-on: ubuntu-latest
-
     steps:
-      # Check out the repository code
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # Set up Bun with the latest version
       - name: Set up Bun (latest)
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
           no-cache: false
 
-      # Install dependencies with Bun
       - name: Install dependencies
         run: bun install
+
+      - name: build before release
+        run: bun run build:prepare
 
       - name: Create release pull request and publish to npm
         id: changeset
         uses: changesets/action@v1
         with:
+          commit: "chore(release): version packages"
+          title: "chore(release): version packages"
+          version: bun .github/changeset-version.js
           publish: bun changeset publish
-          commit: 'chore: release'
-          title: 'chore: release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_ENV: "production"

@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "create-radium"
+      "repo": "silver-radium/create-radium"
     }
   ],
   "commit": false,
