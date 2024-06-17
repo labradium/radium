@@ -71,7 +71,6 @@ async function createRadium() {
             },
           ],
         }),
-
       install: () =>
         terminal.confirm({
           message: "Install dependencies?",
@@ -103,35 +102,36 @@ async function createRadium() {
     s.stop("Project initialized successfully!");
   } catch (error) {
     terminal.note(`Error: ${error}`, "Project Initialization Failed");
+    process.exit(1);
   }
 
-  try {
-    if (project.install) {
+  if (project.install) {
+    try {
       s.start(`Installing Packages via ${project.choosePackageManager}`);
 
       await setTimeout(2000);
       await packageInstall(project.name, project.choosePackageManager);
 
       s.stop("Packages Installed Successfully..");
+    } catch (error) {
+      terminal.note(`Error: ${error}`, "Package Installation Failed");
+      process.exit(1);
     }
-  } catch (error) {
-    terminal.note(`Error: ${error}`, "Package Installation Failed");
   }
 
   try {
-    s.start("Initialising Git");
+    s.start("Initializing Git");
 
     await setTimeout(2000);
-
     await gitInit(path.resolve(process.cwd(), project.name));
 
     s.stop("Git initialized");
   } catch (error) {
-    terminal.note("Git Initialization Failed", `Error: ${error}`);
+    terminal.note(`Error: ${error}`, "Git Initialization Failed");
+    process.exit(1);
   }
 
-  await setTimeout(1000);
-  const nextSteps = `cd ${project.name}        \n${project.install ? "" : `${project.choosePackageManager} install\n`}${project.choosePackageManager} dev`;
+  const nextSteps = `cd ${project.name}\n${project.install ? "" : `${project.choosePackageManager} install\n`}${project.choosePackageManager} dev`;
 
   terminal.note(nextSteps, "Next steps.");
 
@@ -143,6 +143,6 @@ async function createRadium() {
 }
 
 createRadium().catch((err) => {
-  console.error(err);
+  console.error("Unhandled Error:", err);
   process.exit(1);
 });

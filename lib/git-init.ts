@@ -6,5 +6,11 @@ const execAsync = promisify(exec);
 
 export async function gitInit(projectPath: string): Promise<void> {
   const fullPath = path.resolve(process.cwd(), projectPath);
-  await execAsync(`git init ${fullPath}`);
+  try {
+    await execAsync(`git init ${fullPath}`);
+    console.log(`Git repository initialized at ${fullPath}`);
+  } catch (error) {
+    console.error("Failed to initialize Git repository:", error);
+    throw error;
+  }
 }
