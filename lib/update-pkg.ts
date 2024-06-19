@@ -11,19 +11,14 @@ export async function updatePackageJson(
     "package.json",
   );
 
-  try {
-    const packageJson = JSON.parse(
-      await fs.promises.readFile(packageJsonPath, "utf-8"),
-    );
-    packageJson.name = projectName;
+  const packageJson = JSON.parse(
+    await fs.promises.readFile(packageJsonPath, "utf-8"),
+  );
 
-    await fs.promises.writeFile(
-      packageJsonPath,
-      JSON.stringify(packageJson, null, 2),
-    );
-    console.log(`package.json updated with project name: ${projectName}`);
-  } catch (error) {
-    console.error("Failed to update package.json:", error);
-    throw error;
-  }
+  packageJson.name = projectName;
+
+  await fs.promises.writeFile(
+    packageJsonPath,
+    JSON.stringify(packageJson, null, 2),
+  );
 }

@@ -4,7 +4,7 @@ import * as terminal from "@clack/prompts";
 import path from "path";
 import color from "picocolors";
 import { setTimeout } from "timers/promises";
-import { copyDirectory } from "./lib/copy-dir";
+import { getTemplate } from "./lib/download-template";
 import { gitInit } from "./lib/git-init";
 import { packageInstall } from "./lib/package-install";
 import { updatePackageJson } from "./lib/update-pkg";
@@ -31,18 +31,33 @@ async function createRadium() {
       note: () => {
         terminal.note("We use TypeScript by default..", "For Type Safety");
       },
-      chooseTemplate: () =>
+      chooseBase: () =>
         terminal.select({
           message: "Select Base Framework or Library",
+          initialValue: "next",
+          options: [
+            {
+              value: "next",
+              label: "Next.js",
+            },
+            {
+              value: "react",
+              label: "React.js",
+            },
+          ],
+        }),
+      chooseTemplate: () =>
+        terminal.select({
+          message: "Select Template",
           initialValue: "next-general",
           options: [
             {
-              value: "next-general",
+              value: "general",
               label:
                 "Next.js + TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier and Next-Theme..",
             },
             {
-              value: "react-general",
+              value: "general",
               label:
                 "React.js + Vite, Tanstack Router, TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier and Next-Theme..",
             },
@@ -88,9 +103,9 @@ async function createRadium() {
   try {
     s.start("Initializing Project");
 
-    await copyDirectory(
-      `./templates/${project.chooseTemplate}`,
-      `${project.name}`,
+    await getTemplate(
+      project.name,
+      `${project.chooseBase}/${project.chooseTemplate}`,
     );
 
     await setTimeout(3000);
