@@ -1,5 +1,15 @@
 # create-radium
 
+## 1.0.0
+
+### Major Changes
+
+- [`13e1dc3`](https://github.com/silver-radium/create-radium/commit/13e1dc36c5383cdf28ff9fc94ed6789ffed48392) Thanks [@vgseven](https://github.com/vgseven)! - Introducing `create-radium` - An Single CLI to kick off any project with custom tools and services at speed of light.
+
+### Minor Changes
+
+- [`1a68a8b`](https://github.com/silver-radium/create-radium/commit/1a68a8beea4178d0bbfcc69b9ca705a4ca4196a0) Thanks [@vgseven](https://github.com/vgseven)! - perf: overall code improvements
+
 ## 0.7.0
 
 ### Minor Changes
