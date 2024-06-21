@@ -1,10 +1,7 @@
 {
   "name": "templates",
-  "private": false,
+  "private": true,
   "type": "module",
-  "license": "MIT",
-  "description": "A collection of huge templates...",
-  "author": "vgseven <contact@vgseven.com> (https://vgseven.com)",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -29,7 +26,6 @@
   "packageManager": "bun@1.1.15",
   "workspaces": [
     "next/*",
-    "react/*",
-    "!monorepo/*"
+    "react/*"
   ]
 }
