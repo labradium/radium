@@ -1,35 +1,35 @@
 {
-  "name": "radium-templates",
-  "version": "0.0.4",
-  "private": true,
+  "name": "templates",
+  "private": false,
   "type": "module",
   "license": "MIT",
-  "description": "A collection of templates for Radium...",
+  "description": "A collection of huge templates...",
   "author": "vgseven <contact@vgseven.com> (https://vgseven.com)",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "optimize": "prettier --write \"**/*.{ts,tsx,js,jsx,json,mjs,cjs,mdx,md}\" && prettier --check \"**/*.{ts,tsx,js,jsx,json,mjs,cjs,mdx,md}\"",
+    "finetune": "prettier --write \"**/*.{ts,tsx,js,json,mjs,cjs,mdx,md}\" && prettier --check \"**/*.{ts,tsx,js,json,mjs,cjs,mdx,md}\"",
     "prepare": "husky",
-    "build:prepare": "bun run optimize && bun run lint && bun run build"
+    "build:prepare": "bun run finetune && bun run lint && bun run build",
+    "dev:prepare": "git pull origin main && bun i"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.5",
-    "@types/bun": "^1.1.4",
+    "@types/bun": "^1.1.5",
     "husky": "^9.0.11",
     "prettier": "^3.3.2",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "prettier-plugin-tailwindcss": "^0.6.4",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "turbo": "^2.0.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "engines": {
     "bun": ">=1.1"
   },
-  "packageManager": "bun@1.1.13",
+  "packageManager": "bun@1.1.15",
   "workspaces": [
     "next/*",
-    "react/*"
+    "react/*",
+    "!monorepo/*"
   ]
 }

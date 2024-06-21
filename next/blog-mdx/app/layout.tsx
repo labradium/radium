@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Next.js General Template by Radium",
-  description: "An General Next.js Template by Radium.",
+  title: "Next.js Blog Template by Radium",
+  description: "An Blog Next.js Template by Radium.",
   icons: {
     icon: "favicon.png",
   },
