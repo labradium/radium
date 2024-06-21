@@ -12,6 +12,7 @@
     "dev:prepare": "git pull origin main && bun i"
   },
   "devDependencies": {
+    "@manypkg/get-packages": "^2.2.1",
     "@types/bun": "^1.1.5",
     "husky": "^9.0.11",
     "prettier": "^3.3.2",
@@ -25,6 +26,8 @@
   "packageManager": "bun@1.1.15",
   "workspaces": [
     "next/*",
-    "react/*"
+    "package/*",
+    "other/*",
+    "!monorepo/**"
   ]
 }
