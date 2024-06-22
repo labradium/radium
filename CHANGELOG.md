@@ -1,5 +1,11 @@
 # create-radium
 
+## 1.0.1
+
+### Patch Changes
+
+- [`72c54ed`](https://github.com/silver-radium/create-radium/commit/72c54ed6869bab0b2450bad05c555ed79858f0ed) Thanks [@vgseven](https://github.com/vgseven)! - feat: new template added and existing template path update
+
 ## 1.0.0
 
 ### Major Changes
