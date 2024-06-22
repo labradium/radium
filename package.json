@@ -1,5 +1,5 @@
 {
-  "name": "templates",
+  "name": "@silver-radium/templates",
   "private": true,
   "type": "module",
   "scripts": {
