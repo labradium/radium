@@ -41,8 +41,16 @@ async function createRadium() {
               label: "Next.js",
             },
             {
-              value: "react",
+              value: "other",
               label: "React.js",
+            },
+            {
+              value: "monorepo",
+              label: "Turborepo",
+            },
+            {
+              value: "package",
+              label: "TypeScript CLI Tool",
             },
           ],
         }),
@@ -57,9 +65,29 @@ async function createRadium() {
                 "Next.js + TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier and Next-Theme..",
             },
             {
-              value: "general",
+              value: "mdx-blog",
+              label: "Next.js MDX Blog Template.",
+            },
+            {
+              value: "mdx-docs",
+              label: "Next.js MDX Documentation Template.",
+            },
+            {
+              value: "portfolio",
+              label: "Next.js Portfolio Template..",
+            },
+            {
+              value: "react-general",
               label:
                 "React.js + Vite, Tanstack Router, TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier and Next-Theme..",
+            },
+            {
+              value: "cli-general",
+              label: "CLI General Template",
+            },
+            {
+              value: "turborepo-general",
+              label: "Turborepo General Template",
             },
           ],
         }),

@@ -38,10 +38,11 @@
     "lint:check": "bunx @eslint/config-inspector@latest",
     "lint:fix": "eslint --fix --no-warn-ignored",
     "build": "bun build index.ts --outdir ./dist --target node --format esm",
-    "optimize": "prettier --write \"**/*.{ts,json,js,md}\" && prettier --check \"**/*.{ts,json,js,md}\"",
-    "build:prepare": "bun run optimize && bun run lint && bun run lint:fix && bun run build",
+    "finetune": "prettier --write \"**/*.{ts,json,js,md}\" && prettier --check \"**/*.{ts,json,js,md}\"",
+    "build:prepare": "bun run finetune && bun run lint && bun run lint:fix && bun run build",
     "release": "changeset publish --tag latest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "dev:prepare": "git pull origin main && bun run i"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
