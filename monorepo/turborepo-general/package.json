@@ -1,4 +1,5 @@
 {
+  "name": "turborepo-general",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -18,7 +19,6 @@
   "engines": {
     "node": ">=18"
   },
-  "name": "with-tailwind",
   "packageManager": "bun@1.1.13",
   "workspaces": [
     "apps/*",
