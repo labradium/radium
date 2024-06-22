@@ -1,15 +1,3 @@
-# cli-general
+## CLI General Template
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.15. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+This is a CLI tool to create a new project with Radium, TailwindCSS, Shadcn-UI, Geist Font, Eslint + Prettier and Next-Theme.

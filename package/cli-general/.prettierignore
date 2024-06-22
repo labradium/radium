@@ -1,0 +1,17 @@
+# prettierignore files
+
+.changeset
+.husky
+.github
+.vscode
+.next
+.vercel
+.env
+
+# builds
+node_modules
+build
+dist
+bun.lockb
+templates
+bun.lockb
