@@ -31,7 +31,8 @@ bun run dev
 
 ### Add-Ons
 
-- Import statements and TailwindCSS utility classes sorted using prettier-plugins.
+- Import statements and TailwindCSS utility classes sorted using
+  prettier-plugins.
 - Dark and Light themes added using next-themes.
 - Proper folder structure to function properly.
 - Remote images added to work with Vercel Storage.
@@ -45,9 +46,11 @@ bun run dev
 - `lib` : used for hooks, utils, functions, configs, fonts etc.
 - `styles` : used for layout css styles
 - `ui` : used to hold componenets, primitives and icons.
-- `ui/components` : used for components (components designed using `shadcn-ui` components and other resuable components)
+- `ui/components` : used for components (components designed using `shadcn-ui`
+  components and other resuable components)
 - `ui/primitives` : used for primitives (`shadcn-ui` components)
 
 ### Report Bug or Feature Request
 
-Please [create an issue](https://github.com/silver-radium/templates/issues/new) for bug reports or feature requests.
+Please [create an issue](https://github.com/silver-radium/templates/issues/new)
+for bug reports or feature requests.

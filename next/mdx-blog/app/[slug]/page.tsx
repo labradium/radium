@@ -2,42 +2,38 @@ import { getPostBySlug } from "@/lib/providers/mdx";
 import { notFound } from "next/navigation";
 
 interface Params {
-  params: {
-    slug: string;
-  };
+	params: {
+		slug: string;
+	};
 }
 
 const getPageContent = async (slug: string) => {
-  try {
-    const { frontmatter, content } = await getPostBySlug(slug, "page");
-    return { frontmatter, content };
-  } catch (error) {
-    return null;
-  }
+	try {
+		const { frontmatter, content } = await getPostBySlug(slug, "page");
+		return { frontmatter, content };
+	} catch (error) {
+		return null;
+	}
 };
 
 export async function generateMetadata({ params }: Params) {
-  const pageContent = await getPageContent(params.slug);
+	const pageContent = await getPageContent(params.slug);
 
-  if (!pageContent) {
-    return { title: "Page not found" };
-  }
+	if (!pageContent) {
+		return { title: "Page not found" };
+	}
 
-  return { title: pageContent.frontmatter.title };
+	return { title: pageContent.frontmatter.title };
 }
 
 const Page = async ({ params }: Params) => {
-  const pageContent = await getPageContent(params.slug);
+	const pageContent = await getPageContent(params.slug);
 
-  if (!pageContent) {
-    notFound();
-  }
+	if (!pageContent) {
+		notFound();
+	}
 
-  return (
-    <div className="prose prose-invert mx-auto my-12 max-w-6xl dark:prose-invert">
-      {pageContent.content}
-    </div>
-  );
+	return <div className="prose prose-invert mx-auto my-12 max-w-6xl dark:prose-invert">{pageContent.content}</div>;
 };
 
 export default Page;

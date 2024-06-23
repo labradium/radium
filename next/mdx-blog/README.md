@@ -1,6 +1,7 @@
 # Next.js MDX Blog Template
 
-Next.js MDX Blog Template is starter template for creating a blog with Next.js and MDX.
+Next.js MDX Blog Template is starter template for creating a blog with Next.js
+and MDX.
 
 ### Features
 

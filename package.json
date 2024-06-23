@@ -1,33 +1,26 @@
 {
-  "name": "@silver-radium/templates",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "finetune": "prettier --write \"**/*.{ts,tsx,js,json,mjs,cjs,mdx,md}\" && prettier --check \"**/*.{ts,tsx,js,json,mjs,cjs,mdx,md}\"",
-    "prepare": "husky",
-    "build:prepare": "bun run finetune && bun run lint && bun run build",
-    "dev:prepare": "git pull origin main && bun i"
-  },
-  "devDependencies": {
-    "@manypkg/get-packages": "^2.2.1",
-    "@types/bun": "^1.1.5",
-    "husky": "^9.0.11",
-    "prettier": "^3.3.2",
-    "prettier-plugin-organize-imports": "^3.2.4",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "turbo": "^2.0.4"
-  },
-  "engines": {
-    "bun": ">=1.1"
-  },
-  "packageManager": "bun@1.1.15",
-  "workspaces": [
-    "next/*",
-    "package/*",
-    "other/*",
-    "!monorepo/**"
-  ]
+	"name": "@silver-radium/templates",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "turbo lint",
+		"finetune": "biome format --write . && biome lint . --write",
+		"prepare": "husky",
+		"build:prepare": "bun run finetune && bun run lint && bun run build",
+		"dev:prepare": "git pull origin main && bun i"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.2",
+		"@manypkg/get-packages": "^2.2.1",
+		"@types/bun": "^1.1.5",
+		"husky": "^9.0.11",
+		"turbo": "^2.0.4"
+	},
+	"engines": {
+		"bun": ">=1.1"
+	},
+	"packageManager": "bun@1.1.16",
+	"workspaces": ["next/*", "other/*", "!other/turborepo-general/**", "!prime/**"]
 }

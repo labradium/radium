@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ["next-mdx-remote"],
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "odouepjkxheu5esn.public.blob.vercel-storage.com",
-        port: "",
-        pathname: "/silvercompany/**",
-      },
-    ],
-  },
+	transpilePackages: ["next-mdx-remote"],
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "odouepjkxheu5esn.public.blob.vercel-storage.com",
+				port: "",
+				pathname: "/silvercompany/**",
+			},
+		],
+	},
 };
 
 export default nextConfig;

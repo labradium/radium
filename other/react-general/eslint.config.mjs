@@ -4,59 +4,49 @@ import js from "@eslint/js";
 import tsParser from "@typescript-eslint/parser";
 import reactRefresh from "eslint-plugin-react-refresh";
 import globals from "globals";
-import path from "path";
-import { fileURLToPath } from "url";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
+	baseDirectory: __dirname,
+	recommendedConfig: js.configs.recommended,
+	allConfig: js.configs.all,
 });
 
 export default [
-  {
-    ignores: [
-      "**/dist",
-      "**/.eslintrc.cjs",
-      "**/node_modules/",
-      "**/build/",
-      "**/public/",
-    ],
-  },
-  ...fixupConfigRules(
-    compat.extends(
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:react-hooks/recommended",
-    ),
-  ),
-  {
-    plugins: {
-      "react-refresh": reactRefresh,
-    },
+	{
+		ignores: ["**/dist", "**/.eslintrc.cjs", "**/node_modules/", "**/build/", "**/public/"],
+	},
+	...fixupConfigRules(
+		compat.extends("eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react-hooks/recommended")
+	),
+	{
+		plugins: {
+			"react-refresh": reactRefresh,
+		},
 
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
+		languageOptions: {
+			globals: {
+				...globals.browser,
+			},
 
-      parser: tsParser,
-    },
+			parser: tsParser,
+		},
 
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
-  },
-  {
-    files: ["**/*.ts", "**/*.tsx"],
+		settings: {
+			react: {
+				version: "detect",
+			},
+		},
+	},
+	{
+		files: ["**/*.ts", "**/*.tsx"],
 
-    languageOptions: {
-      ecmaVersion: 5,
-      sourceType: "script",
-    },
-  },
+		languageOptions: {
+			ecmaVersion: 5,
+			sourceType: "script",
+		},
+	},
 ];
