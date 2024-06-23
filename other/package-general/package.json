@@ -21,12 +21,10 @@
 		"bun": ">=1.1"
 	},
 	"scripts": {
-		"lint": "eslint --no-warn-ignored",
-		"lint:check": "bunx @eslint/config-inspector@latest",
-		"lint:fix": "eslint --fix --no-warn-ignored",
+		"lint": "biome lint . --write",
+		"finetune": "biome format . --write",
 		"build": "bun build index.ts --outdir ./dist --target node --format esm",
-		"finetune": "prettier --write \"**/*.{ts,json,js,md}\" && prettier --check \"**/*.{ts,json,js,md}\"",
-		"build:prepare": "bun run finetune && bun run lint && bun run lint:fix && bun run build",
+		"build:prepare": "bun run finetune && bun run lint && bun run build",
 		"release": "changeset publish --tag latest",
 		"prepare": "husky"
 	},
@@ -38,21 +36,9 @@
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.5.0",
 		"@changesets/cli": "^2.27.5",
-		"@eslint/eslintrc": "^3.1.0",
-		"@eslint/js": "^9.5.0",
-		"@types/bun": "^1.1.5",
-		"@types/eslint": "^8.56.10",
-		"@types/eslint__eslintrc": "^2.1.1",
-		"@types/eslint__js": "^8.42.3",
 		"@types/fs-extra": "^11.0.4",
 		"@types/node": "^20.14.8",
-		"@typescript-eslint/eslint-plugin": "^7.13.1",
-		"@typescript-eslint/parser": "^7.13.1",
-		"eslint": "^9.5.0",
-		"globals": "^15.6.0",
-		"husky": "^9.0.11",
-		"prettier": "^3.3.2",
-		"prettier-plugin-organize-imports": "^3.2.4"
+		"husky": "^9.0.11"
 	},
 	"peerDependencies": {
 		"typescript": "^5.5.2"

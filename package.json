@@ -6,7 +6,7 @@
 		"build": "turbo build",
 		"dev": "turbo dev",
 		"lint": "turbo lint",
-		"finetune": "biome format --write . && biome lint . --write",
+		"finetune": "biome format . --write && biome lint . --write",
 		"prepare": "husky",
 		"build:prepare": "bun run finetune && bun run lint && bun run build",
 		"dev:prepare": "git pull origin main && bun i"

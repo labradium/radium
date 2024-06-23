@@ -7,19 +7,20 @@
 		"dev": "next dev --turbo",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
-		"optimize": "prettier --write \"**/*.{ts,tsx,md,js,json}\" && prettier --check \"**/*.{ts,tsx,md,js,json}\"",
+		"lint": "biome lint . --write",
+		"finetune": "biome format . --write",
 		"ui:add": "bunx --bun shadcn-ui@latest add",
-		"build:prepare": "bun run optimize && bun run lint && bun run build"
+		"build:prepare": "bun run finetune && bun run lint && bun run build"
 	},
 	"dependencies": {
 		"@radix-ui/react-icons": "^1.3.0",
-		"@radix-ui/react-label": "^2.0.2",
-		"@radix-ui/react-slot": "^1.0.2",
+		"@radix-ui/react-label": "^2.1.0",
+		"@radix-ui/react-slot": "^1.1.0",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"geist": "^1.3.0",
 		"next": "14.2.4",
+		"next-mdx-remote": "^5.0.0",
 		"next-themes": "^0.3.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
@@ -27,16 +28,14 @@
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
-		"@types/node": "^20.14.2",
+		"@biomejs/biome": "1.8.2",
+		"@tailwindcss/typography": "^0.5.13",
+		"@types/node": "^20.14.6",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"autoprefixer": "^10.4.19",
-		"eslint": "^8.57.0",
-		"eslint-config-next": "14.2.4",
 		"postcss": "^8.4.38",
 		"prettier": "^3.3.2",
-		"prettier-plugin-organize-imports": "^3.2.4",
-		"prettier-plugin-tailwindcss": "^0.6.4",
 		"tailwindcss": "^3.4.4",
 		"typescript": "^5.4.5"
 	}
