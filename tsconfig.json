@@ -1,12 +1,17 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "strict": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": false
-  },
-  "exclude": ["templates", "dist", "node_modules"]
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"strict": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"skipLibCheck": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"paths": {
+			"@/*": ["./*"]
+		}
+	},
+	"exclude": ["library", "dist", "node_modules"]
 }
