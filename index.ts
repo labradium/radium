@@ -7,7 +7,7 @@ import { setTimeout } from "node:timers/promises";
 import { getTemplate } from "@/functions/download-template";
 import { gitInit } from "@/functions/git-init";
 import { packageInstall } from "@/functions/package-install";
-import { updatePackageJson } from "@/functions/modify-project";
+import { modifyProject, updatePackageJson } from "@/functions/modify-project";
 
 const s = terminal.spinner();
 
@@ -93,6 +93,7 @@ async function createRadium() {
 
 		if (project.chooseAddOn === "eslint-prettier") {
 			const projDir = path.resolve(process.cwd(), project.name);
+			modifyProject(projDir);
 			await getTemplate(projDir, "library/addon");
 		}
 

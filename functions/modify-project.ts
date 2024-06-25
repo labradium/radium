@@ -10,3 +10,9 @@ export async function updatePackageJson(projectPath: string, projectName: string
 
 	await fs.promises.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2));
 }
+
+export function modifyProject(projectPath: string) {
+	fs.rmSync(path.resolve(projectPath, "package.json"), { force: true });
+	fs.rmSync(path.resolve(projectPath, "next.config.js"), { force: true });
+	fs.rmSync(path.resolve(projectPath, "biome.json"), { force: true });
+}
