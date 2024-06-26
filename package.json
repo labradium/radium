@@ -1,5 +1,6 @@
 {
 	"name": "@silver-radium/cli",
+	"private": false,
 	"version": "1.0.0",
 	"description": "Initialize a new project with radium.",
 	"license": "MIT",
