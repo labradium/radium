@@ -13,7 +13,7 @@ async function downloadFile(url: string, filePath: string) {
 	await fs.outputFile(filePath, response.data);
 }
 
-async function downloadDirectory(owner: string, repo: string, dirPath: string, localDir: string) {
+export async function downloadDirectory(owner: string, repo: string, dirPath: string, localDir: string) {
 	const { data } = await octokit.rest.repos.getContent({
 		owner,
 		repo,
@@ -32,12 +32,4 @@ async function downloadDirectory(owner: string, repo: string, dirPath: string, l
 			}
 		}
 	}
-}
-
-export async function getTemplate(dirPath: string, template: string) {
-	const owner = "silver-radium";
-	const repo = "cli";
-	const localDir = path.resolve(process.cwd(), dirPath);
-
-	await downloadDirectory(owner, repo, template, localDir);
 }

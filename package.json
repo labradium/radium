@@ -1,6 +1,6 @@
 {
-	"name": "create-radium",
-	"version": "1.0.1",
+	"name": "@silver-radium/cli",
+	"version": "1.0.0",
 	"description": "Initialize a new project with radium.",
 	"license": "MIT",
 	"author": "VGSEVEN <contact@vgseven.com>",
@@ -30,10 +30,10 @@
 		"dev:prepare": "git pull origin main && bun i"
 	},
 	"dependencies": {
-		"@clack/core": "^0.3.4",
 		"@clack/prompts": "^0.7.0",
 		"@octokit/plugin-rest-endpoint-methods": "^13.2.1",
 		"axios": "^1.7.2",
+		"commander": "^12.1.0",
 		"fs-extra": "^11.2.0",
 		"octokit": "^4.0.2",
 		"picocolors": "^1.0.1"
