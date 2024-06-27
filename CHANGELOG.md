@@ -1,5 +1,13 @@
 # @silver-radium/init
 
+## 0.1.2
+
+### Patch Changes
+
+- [`2022871`](https://github.com/silver-radium/init/commit/2022871b073f5933aee51866a36f083df3383972) Thanks [@vgseven](https://github.com/vgseven)! - chore: readme example update
+
+- [`b8c83f7`](https://github.com/silver-radium/init/commit/b8c83f75d6d5625ddecdb6c5ace0d132f73575ad) Thanks [@vgseven](https://github.com/vgseven)! - fix: readme examples and get-version fixed
+
 ## 0.1.1
 
 ### Patch Changes
