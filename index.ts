@@ -5,6 +5,7 @@ import picocolors from "picocolors";
 import { setTimeout } from "node:timers/promises";
 import { Init } from "@/commands/init";
 import { Starter } from "@/commands/starter";
+import { getVersion } from "@/functions/get-version";
 
 async function cli() {
 	if (process.argv.length < 3) {
@@ -12,7 +13,7 @@ async function cli() {
 		process.exit(1);
 	}
 
-	program.version("0.1.0", "-v, --version", "Output the current version");
+	program.version(`${getVersion()}`, "-v, --version", "Output the current version");
 
 	program
 		.command("new")

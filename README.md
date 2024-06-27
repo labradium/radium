@@ -61,14 +61,14 @@ Display help for a command.
 Example of initializing a new project with your tools.
 
 ```bash
-init --n
+init new
 ```
 follow the prompts to initialize your project.
 
 Example of initializing a new project with existing starter templates github repository url.
 
 ```bash
-init --w https://github.com/silver-radium/starter/tree/main/essential/next
+init with https://github.com/silver-radium/starter/tree/main/essential/next
 ```
 
 ### Contributing

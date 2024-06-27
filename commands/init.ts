@@ -2,7 +2,7 @@ import * as terminal from "@clack/prompts";
 import path from "node:path";
 import color from "picocolors";
 import { setTimeout } from "node:timers/promises";
-import { downloadDirectory } from "@/functions/download-template";
+import { downloadDirectory } from "@/functions/get-template";
 import { gitInit } from "@/functions/git-init";
 import { packageInstall } from "@/functions/package-install";
 import { modifyProject, updatePackageJson } from "@/functions/modify-project";

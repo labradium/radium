@@ -2,7 +2,7 @@ import * as terminal from "@clack/prompts";
 import * as color from "picocolors";
 import { setTimeout } from "node:timers/promises";
 import { packageInstall } from "@/functions/package-install";
-import { downloadDirectory } from "@/functions/download-template";
+import { downloadDirectory } from "@/functions/get-template";
 import { repoInfo } from "@/functions/repo-info";
 
 const s = terminal.spinner();
