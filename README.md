@@ -40,13 +40,26 @@ init [flags]
 
 ### Flags
 
-##### `new`
-
-Initialize a new project with your tools.
 
 ##### `with`
 
 Initialize a new project with existing starter templates github repository url.
+
+##### `-u, --url <url>`
+
+URL of the starter template.
+
+##### `-n, --name <name>`
+
+Name of the project.
+
+##### `-g, --git`
+
+Initialize git.
+
+##### `-i, --install <package manager>`
+
+Install dependencies with package manager.
 
 ##### `--version / -v`
 
@@ -58,17 +71,11 @@ Display help for a command.
 
 ### Examples
 
-Example of initializing a new project with your tools.
-
-```bash
-init new
-```
-follow the prompts to initialize your project.
 
 Example of initializing a new project with existing starter templates github repository url.
 
 ```bash
-init with https://github.com/silver-radium/starter/tree/main/essential/next
+init with -u https://github.com/silver-radium/starter/tree/main/essential/next -g -i bun
 ```
 
 ### Contributing
