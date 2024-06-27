@@ -1,5 +1,11 @@
 # @silver-radium/init
 
+## 0.2.1
+
+### Patch Changes
+
+- [`e361d4c`](https://github.com/silver-radium/init/commit/e361d4c8758aec799ae322f05d0e7d38afa32382) Thanks [@vgseven](https://github.com/vgseven)! - fix: git init issues resolved and success message moved to with.ts
+
 ## 0.2.0
 
 ### Minor Changes
