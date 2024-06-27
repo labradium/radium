@@ -1,21 +1,22 @@
 {
-	"name": "@silver-radium/cli",
+	"name": "@silver-radium/init",
 	"private": false,
-	"version": "1.0.0",
-	"description": "Initialize a new project with radium.",
+	"version": "0.0.1",
+	"description": "Initialize any new project in seconds with your tools..",
 	"license": "MIT",
 	"author": "VGSEVEN <contact@vgseven.com>",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/silver-radium/create-radium.git",
-		"directory": "silver-radium/create-radium"
+		"url": "https://github.com/silver-radium/init.git",
+		"directory": "silver-radium/init"
 	},
+	"homepage": "https://github.com/silver-radium/init",
 	"keywords": ["radium", "react", "nextjs", "tailwindcss", "radix-ui", "astro", "solidjs", "million"],
 	"module": "index.ts",
 	"type": "module",
 	"exports": "./dist/index.js",
 	"bin": {
-		"radium": "./dist/index.js"
+		"init": "./dist/index.js"
 	},
 	"files": ["dist", "README.md", "package.json"],
 	"engines": {
@@ -45,7 +46,7 @@
 		"@changesets/cli": "^2.27.6",
 		"@types/bun": "^1.1.5",
 		"@types/fs-extra": "^11.0.4",
-		"@types/node": "^20.14.8",
+		"@types/node": "^20.14.9",
 		"husky": "^9.0.11"
 	},
 	"peerDependencies": {

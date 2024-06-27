@@ -13,5 +13,6 @@
 			"@/*": ["./*"]
 		}
 	},
-	"exclude": ["library", "dist", "node_modules"]
+	"exclude": ["library", "dist", "node_modules"],
+	"include": ["**/*.ts"]
 }

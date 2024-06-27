@@ -13,7 +13,8 @@ async function cli() {
 	}
 
 	program
-		.command("init")
+		.command("--new")
+		.command("-n")
 		.description("Initialize a new project with your tools")
 		.action(async () => {
 			setTimeout(1000);
@@ -22,26 +23,13 @@ async function cli() {
 		});
 
 	program
-		.command("starter")
+		.command("--with")
+		.command("-w")
 		.description("Initialize a new project with starter template")
 		.action(async () => {
 			setTimeout(1000);
 			console.log("Initializing Starter..");
 			await Starter();
-		});
-
-	program
-		.command("integrate")
-		.description("Integrate any tool to your existing project")
-		.action(() => {
-			console.log("integrating is currently under development");
-		});
-
-	program
-		.command("migrate")
-		.description("Migrate any tool to your specific tool")
-		.action(() => {
-			console.log("migrating is currently under development");
 		});
 
 	program.parse(process.argv);

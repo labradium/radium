@@ -1,45 +1,59 @@
-## Radium CLI, Initializing any new project in seconds..
+## Radium Init, Initialize any new project in seconds with your tools..
 
-## Getting Started
+### Getting Started
 
-```bash
-bun add -g @silver-radium/cli
-```
+You can install radium `init` globally or use it as executable whenever you need.
 
-## Usage
+#### For Global Installation (Recommended)
 
 ```bash
-radium init
+bun add -g @silver-radium/init
+```
+#### For Executable
+
+```bash
+bunx @silver-radium/init [flags]
 ```
 
-### Commands
+### Usage
 
-#### init
+```bash
+init [flags]
+```
 
-Initialize a new project with your tools
+### Flags
 
-#### starter
+##### `--new / -n`
 
-Initialize a new project with starter template
+Initialize a new project with your tools.
 
-#### integrate
+##### `--with / -w`
 
-Integrate any tool to your existing project
+Initialize a new project with existing starter templates github repository url.
 
-#### migrate
+##### `--help / -h`
 
-Migrate any tool to your specific tool
+Display help for a command.
 
-### Options
+### Examples
 
-#### --help, -h
+Example of initializing a new project with your tools.
 
-Display help for command
+```bash
+init --n
+```
+follow the prompts to initialize your project.
 
-## Contributing
+Example of initializing a new project with existing starter templates github repository url.
+
+```bash
+init --w https://github.com/silver-radium/starter/tree/main/essential/next
+```
+
+### Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
 
-## License
+### License
 
 This project is licensed under the MIT License. 
