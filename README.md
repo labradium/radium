@@ -40,13 +40,17 @@ init [flags]
 
 ### Flags
 
-##### `--new / -n`
+##### `new`
 
 Initialize a new project with your tools.
 
-##### `--with / -w`
+##### `with`
 
 Initialize a new project with existing starter templates github repository url.
+
+##### `--version / -v`
+
+Display current version.
 
 ##### `--help / -h`
 
