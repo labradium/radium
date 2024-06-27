@@ -9,12 +9,29 @@ You can install radium `init` globally or use it as executable whenever you need
 ```bash
 bun add -g @silver-radium/init
 ```
+```bash
+npm add -g @silver-radium/init
+```
+```bash
+pnpm add -g @silver-radium/init
+```
+```bash
+yarn add -g @silver-radium/init
+```
 #### For Executable
 
 ```bash
 bunx @silver-radium/init [flags]
 ```
-
+```bash
+npx @silver-radium/init [flags]
+```
+```bash
+pnpm dlx @silver-radium/init [flags]
+```
+```bash
+yarn dlx @silver-radium/init [flags]
+```
 ### Usage
 
 ```bash
