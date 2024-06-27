@@ -30,12 +30,7 @@ async function cli() {
 	program.parse(process.argv);
 }
 
-cli()
-	.then(() => {
-		console.log(picocolors.green("Project Initialized Successfully!"));
-		console.log(picocolors.green("Happy Coding!"));
-	})
-	.catch((error) => {
-		console.error(error);
-		process.exit(1);
-	});
+cli().catch((error) => {
+	console.error(error);
+	process.exit(1);
+});
