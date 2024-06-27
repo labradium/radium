@@ -12,9 +12,10 @@ async function cli() {
 		process.exit(1);
 	}
 
+	program.version("0.1.0", "-v, --version", "Output the current version");
+
 	program
-		.command("--new")
-		.command("-n")
+		.command("new")
 		.description("Initialize a new project with your tools")
 		.action(async () => {
 			setTimeout(1000);
@@ -23,8 +24,7 @@ async function cli() {
 		});
 
 	program
-		.command("--with")
-		.command("-w")
+		.command("with")
 		.description("Initialize a new project with starter template")
 		.action(async () => {
 			setTimeout(1000);
