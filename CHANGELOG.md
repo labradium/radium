@@ -1,5 +1,11 @@
 # @silver-radium/init
 
+## 0.2.0
+
+### Minor Changes
+
+- [`9f95e8e`](https://github.com/silver-radium/init/commit/9f95e8e52babb44704428ff782144fe8718419b2) Thanks [@vgseven](https://github.com/vgseven)! - core: init mvp initilized to functions with radium starter and other templates
+
 ## 0.1.2
 
 ### Patch Changes
