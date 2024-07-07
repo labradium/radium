@@ -1,5 +1,5 @@
 {
-	"name": "@silver-radium/templates",
+	"name": "templates",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -12,15 +12,15 @@
 		"dev:prepare": "git pull origin main && bun i"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.8.2",
-		"@manypkg/get-packages": "^2.2.1",
-		"@types/bun": "^1.1.5",
+		"@biomejs/biome": "1.8.3",
+		"@manypkg/get-packages": "^2.2.2",
+		"@types/bun": "^1.1.6",
 		"husky": "^9.0.11",
-		"turbo": "^2.0.4"
+		"turbo": "^2.0.6"
 	},
 	"engines": {
 		"bun": ">=1.1"
 	},
-	"packageManager": "bun@1.1.16",
-	"workspaces": ["next/*", "other/*", "!other/turborepo-general/**", "!prime/**"]
+	"packageManager": "bun@1.1.18",
+	"workspaces": ["next/*"]
 }
