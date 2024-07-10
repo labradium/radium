@@ -1,5 +1,11 @@
 # @silver-radium/init
 
+## 0.2.2
+
+### Patch Changes
+
+- [`9bcfd92`](https://github.com/silver-radium/init/commit/9bcfd9267ae87c3c36f49ab46c98c00a593bbcc0) Thanks [@vgseven](https://github.com/vgseven)! - core: bug fixes and prepare-project to modify package-json
+
 ## 0.2.1
 
 ### Patch Changes
