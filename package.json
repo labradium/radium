@@ -1,68 +1,68 @@
 {
-	"name": "@silver-radium/init",
-	"private": false,
-	"version": "0.2.1",
-	"description": "Initialize any new project in seconds with your tools..",
-	"license": "MIT",
-	"author": "VGSEVEN <contact@vgseven.com>",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/silver-radium/init.git",
-		"directory": "silver-radium/init"
-	},
-	"homepage": "https://github.com/silver-radium/init",
-	"keywords": [
-		"radium",
-		"react",
-		"nextjs",
-		"tailwindcss",
-		"radix-ui",
-		"astro",
-		"solidjs",
-		"million"
-	],
-	"module": "index.ts",
-	"type": "module",
-	"exports": "./dist/index.js",
-	"bin": {
-		"init": "./dist/index.js"
-	},
-	"files": [
-		"dist",
-		"README.md",
-		"package.json"
-	],
-	"engines": {
-		"bun": ">=1.1"
-	},
-	"scripts": {
-		"lint": "biome lint . --write",
-		"build": "bun build index.ts --outdir ./dist --target node --format esm",
-		"format": "biome format . --write",
-		"build:prepare": "bun run format && bun run lint && bun run build",
-		"release": "changeset publish --tag latest",
-		"prepare": "husky",
-		"dev:prepare": "git pull origin main && bun i"
-	},
-	"dependencies": {
-		"@clack/prompts": "^0.7.0",
-		"@octokit/plugin-rest-endpoint-methods": "^13.2.1",
-		"axios": "^1.7.2",
-		"commander": "^12.1.0",
-		"fs-extra": "^11.2.0",
-		"octokit": "^4.0.2",
-		"picocolors": "^1.0.1"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^1.8.2",
-		"@changesets/changelog-github": "^0.5.0",
-		"@changesets/cli": "^2.27.6",
-		"@types/bun": "^1.1.6",
-		"@types/fs-extra": "^11.0.4",
-		"@types/node": "^20.14.9",
-		"husky": "^9.0.11"
-	},
-	"peerDependencies": {
-		"typescript": "^5.5.2"
-	}
+  "name": "@silver-radium/init",
+  "private": false,
+  "version": "0.2.1",
+  "description": "Initialize any new project in seconds with your tools..",
+  "license": "MIT",
+  "author": "vgseven <contact@vgseven.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silver-radium/init.git",
+    "directory": "silver-radium/init"
+  },
+  "homepage": "https://github.com/silver-radium/init",
+  "keywords": [
+    "radium",
+    "react",
+    "nextjs",
+    "tailwindcss",
+    "radix-ui",
+    "astro",
+    "solidjs",
+    "million"
+  ],
+  "module": "index.ts",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "bin": {
+    "init": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "engines": {
+    "bun": ">=1.1"
+  },
+  "scripts": {
+    "lint": "biome lint . --write",
+    "build": "bun build ./src/index.ts --outdir ./dist --target node --format esm",
+    "format": "biome format . --write",
+    "build:prepare": "bun run format && bun run lint && bun run build",
+    "release": "changeset publish --tag latest",
+    "prepare": "husky",
+    "dev:prepare": "git pull origin main && bun i"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "@octokit/plugin-rest-endpoint-methods": "^13.2.4",
+    "axios": "^1.7.2",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "octokit": "^4.0.2",
+    "picocolors": "^1.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7",
+    "@types/bun": "^1.1.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.14.10",
+    "husky": "^9.0.11"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.3"
+  }
 }

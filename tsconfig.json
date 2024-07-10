@@ -1,18 +1,18 @@
 {
-	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
-		"moduleResolution": "node",
-		"strict": true,
-		"resolveJsonModule": true,
-		"esModuleInterop": true,
-		"skipLibCheck": false,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"paths": {
-			"@/*": ["./*"]
-		}
-	},
-	"exclude": ["library", "dist", "node_modules"],
-	"include": ["**/*.ts"]
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["dist", "node_modules"],
+  "include": ["**/*.ts"]
 }
