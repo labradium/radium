@@ -2,8 +2,8 @@
 
 import * as terminal from "@clack/prompts";
 import * as color from "picocolors";
-import { New } from "./commands/new";
-import { With } from "./commands/with";
+import { New } from "@/commands/new";
+import { With } from "@/commands/with";
 
 export async function init() {
   terminal.intro(`${color.bgCyan(color.black(" Initialize New Project With Radium, Let's Get Started! "))}`);

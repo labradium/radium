@@ -25,14 +25,14 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "jiti ./src/index.ts",
+    "dev": "bun ./src/index.ts",
     "lint": "biome lint . --write",
     "build": "tsup",
     "format": "biome format . --write",
-    "build:prepare": "rimraf dist && pnpm run format && pnpm run lint && pnpm run build",
+    "build:prepare": "rimraf dist && bun run format && bun run lint && bun run build",
     "release": "changeset publish --tag latest",
     "prepare": "husky",
-    "dev:prepare": "git pull origin main && pnpm i"
+    "dev:prepare": "git pull origin main && bun i"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
@@ -51,9 +51,8 @@
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.11",
     "husky": "^9.1.0",
-    "jiti": "^1.21.6",
+    "rimraf": "^6.0.1",
     "tsup": "^8.1.2",
-    "typescript": "^5.5.3",
-    "rimraf": "^6.0.1"
+    "typescript": "^5.5.3"
   }
 }

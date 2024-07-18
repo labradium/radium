@@ -16,14 +16,14 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
-      - name: Set up Node (LTS)
-        uses: actions/setup-node@v4
+      - name: Set up Bun (latest)
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: ">=18.0.0"
-          cache: "pnpm-lock.yaml"
+          bun-version: latest
+          no-cache: false
 
       - name: Install dependencies
-        run: pnpm i
+        run: bun i
 
       - name: Run lint and build
-        run: pnpm run build:prepare
+        run: bun run build:prepare

@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import path from "node:path";
-import { getPath } from "./utils";
+import { getPath } from "@/functions/utils";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
 
