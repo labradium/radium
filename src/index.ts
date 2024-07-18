@@ -41,7 +41,7 @@ export async function init() {
   );
 
   if (chooseProjectMethod.chooseMethod === "new") {
-    await New();
+    await New(chooseProjectMethod.name);
   }
 
   if (chooseProjectMethod.chooseMethod === "with") {

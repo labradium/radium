@@ -1,7 +1,12 @@
+import { copyFiles } from "../functions/prepare-project";
 import * as terminal from "@clack/prompts";
-import { setTimeout } from "node:timers/promises";
+import * as fs from "node:fs";
+import * as path from "node:path";
+import { packageInstall } from "../functions/package-install";
+import { gitInit } from "../functions/git-init";
+import { updatePackageJson } from "../functions/prepare-project";
 
-export async function New() {
+export async function New(projName: string) {
   const s = terminal.spinner();
 
   const newOptions = await terminal.group(
@@ -9,33 +14,7 @@ export async function New() {
       noteTS: () => {
         terminal.note("We use TypeScript by default..", "For Better Type Safety");
       },
-      noteNX: () => terminal.note("Next.js is the only supported framework.", "Currently, "),
-      chooseExtras: () =>
-        terminal.multiselect({
-          message: "Add your favorite extras?",
-          options: [
-            {
-              value: "husky",
-              label: "Husky",
-            },
-            {
-              value: "changesets",
-              label: "Changesets",
-            },
-            {
-              value: "github-workflow",
-              label: "Github Workflow",
-            },
-            {
-              value: "vscode-settings",
-              label: "VSCode Settings",
-            },
-            {
-              value: "biome",
-              label: "Biomejs",
-            },
-          ],
-        }),
+      noteNX: () => terminal.note("Next.js is the only supported framework, Soon React and others.", "Currently"),
       choosePackageManager: () =>
         terminal.select({
           message: "Select Package Manager",
@@ -78,8 +57,37 @@ export async function New() {
     }
   );
 
-  s.start("Initializing Project");
-  await setTimeout(2000);
-  terminal.note(`${newOptions}`, "Your Choices");
-  s.stop("Project initialized successfully!");
+  try {
+    s.start("Initializing Project");
+    await copyFiles(projName);
+
+    const packageJSONPath = path.join(projName, "package.json");
+    if (fs.existsSync(packageJSONPath)) {
+      await updatePackageJson(projName, projName);
+    }
+
+    const projectPath = path.join(process.cwd(), projName);
+    if (newOptions.install) {
+      await packageInstall(projectPath, newOptions.choosePackageManager);
+    }
+
+    if (newOptions.git) {
+      await gitInit(projectPath);
+    }
+
+    s.stop("Project initialized successfully!");
+
+    let message = "";
+    if (!newOptions.install) {
+      message = `cd ${projName} \n${newOptions.choosePackageManager} i \n${newOptions.choosePackageManager} run dev`;
+    } else {
+      message = `cd ${projName} \n${newOptions.choosePackageManager} run dev`;
+    }
+
+    terminal.note(message, "Happy Coding!");
+    process.exit(0);
+  } catch (error) {
+    terminal.note(`Error: ${error}`, "Project Initialization Failed");
+    process.exit(1);
+  }
 }
