@@ -11,16 +11,7 @@
     "directory": "silver-radium/init"
   },
   "homepage": "https://github.com/silver-radium/init",
-  "keywords": [
-    "radium",
-    "react",
-    "nextjs",
-    "tailwindcss",
-    "radix-ui",
-    "astro",
-    "solidjs",
-    "million"
-  ],
+  "keywords": ["radium", "react", "nextjs", "tailwindcss", "radix-ui", "astro", "solidjs", "million"],
   "module": "index.ts",
   "type": "module",
   "exports": "./dist/index.js",
@@ -29,11 +20,7 @@
     "init": "./dist/index.js",
     "radium": "./dist/index.js"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "package.json"
-  ],
+  "files": ["dist", "README.md", "package.json"],
   "engines": {
     "node": ">=18.0.0"
   },

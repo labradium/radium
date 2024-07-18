@@ -1,4 +1,0 @@
-bun i
-bun run lint
-bun run format
-bun run build
