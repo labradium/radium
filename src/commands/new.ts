@@ -5,6 +5,7 @@ import * as path from "node:path";
 import { packageInstall } from "@/functions/prepare-project";
 import { gitInit } from "@/functions/prepare-project";
 import { updatePackageJson } from "@/functions/prepare-project";
+import { addBiome, addShadcnUI, addTheme } from "@/functions/setting-project";
 
 export async function New(projName: string) {
   const s = terminal.spinner();
@@ -15,6 +16,22 @@ export async function New(projName: string) {
         terminal.note("We use TypeScript by default..", "For Better Type Safety");
       },
       noteNX: () => terminal.note("Next.js is the only supported framework, Soon React and others.", "Currently"),
+      noteBase: () => terminal.note("Base Next.js Template consist TailwindCSS and Geist Font..", "Base Template Initialized"),
+      addBiome: () =>
+        terminal.confirm({
+          message: "Do You want to add biome?",
+          initialValue: true,
+        }),
+      addShadcnUI: () =>
+        terminal.confirm({
+          message: "Do You want to add shadcn-ui?",
+          initialValue: true,
+        }),
+      addTheme: () =>
+        terminal.confirm({
+          message: "Do You want to add theme?",
+          initialValue: true,
+        }),
       choosePackageManager: () =>
         terminal.select({
           message: "Select Package Manager",
@@ -66,6 +83,24 @@ export async function New(projName: string) {
       await updatePackageJson(projName, projName);
     }
     s.stop("Project initialized successfully!");
+
+    s.message("Adding biome...");
+    if (newOptions.addBiome) {
+      await addBiome(projName);
+    }
+    s.stop("Biome added successfully!");
+
+    s.start("Adding shadcn-ui...");
+    if (newOptions.addShadcnUI) {
+      await addShadcnUI(projName);
+    }
+    s.stop("shadcn-ui added successfully!");
+
+    s.start("Adding theme...");
+    if (newOptions.addTheme) {
+      await addTheme(projName);
+    }
+    s.stop("theme added successfully!");
 
     s.start("Installing Dependencies");
     const projectPath = path.join(process.cwd(), projName);

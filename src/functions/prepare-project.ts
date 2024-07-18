@@ -1,8 +1,10 @@
 import fs from "fs-extra";
 import path from "node:path";
-import { getPath } from "@/functions/utils";
+// import { getPath } from "@/functions/utils";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
+
+const execAsync = promisify(exec);
 
 export async function updatePackageJson(projectPath: string, projectName: string): Promise<void> {
   const packageJsonPath = path.resolve(process.cwd(), projectPath, "package.json");
@@ -15,7 +17,8 @@ export async function updatePackageJson(projectPath: string, projectName: string
 }
 
 export async function copyFiles(projectName: string): Promise<void> {
-  const sourceDir = path.join(getPath("lib"), "next");
+  // const sourceDir = path.join(getPath("lib"), "base");
+  const sourceDir = path.join(process.cwd(), "lib", "base");
   const destinationDir = path.join(process.cwd(), projectName);
 
   if (!fs.existsSync(sourceDir)) {
@@ -26,8 +29,6 @@ export async function copyFiles(projectName: string): Promise<void> {
 
   await fs.copy(sourceDir, destinationDir);
 }
-
-const execAsync = promisify(exec);
 
 export async function packageInstall(projectPath: string, packageManager: string): Promise<void> {
   const fullPath = path.resolve(process.cwd(), projectPath);
