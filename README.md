@@ -7,76 +7,38 @@ You can install radium `init` globally or use it as executable whenever you need
 #### For Global Installation (Recommended)
 
 ```bash
-bun add -g @silver-radium/init
+bun add -g radium-init
 ```
 ```bash
-npm add -g @silver-radium/init
+npm add -g radium-init
 ```
 ```bash
-pnpm add -g @silver-radium/init
+pnpm add -g radium-init
 ```
 ```bash
-yarn add -g @silver-radium/init
+yarn add -g radium-init
 ```
 #### For Executable
 
 ```bash
-bunx @silver-radium/init [flags]
+bunx radium-init@latest
 ```
 ```bash
-npx @silver-radium/init [flags]
+npx radium-init@latest
 ```
 ```bash
-pnpm dlx @silver-radium/init [flags]
+pnpm dlx radium-init@latest
 ```
 ```bash
-yarn dlx @silver-radium/init [flags]
+yarn dlx radium-init@latest
 ```
 ### Usage
 
 ```bash
-init [flags]
+init
 ```
+and follow the instructions.
 
-### Flags
-
-
-##### `with`
-
-Initialize a new project with existing starter templates github repository url.
-
-##### `-u, --url <url>`
-
-URL of the starter template.
-
-##### `-n, --name <name>`
-
-Name of the project.
-
-##### `-g, --git`
-
-Initialize git.
-
-##### `-i, --install <package manager>`
-
-Install dependencies with package manager.
-
-##### `--version / -v`
-
-Display current version.
-
-##### `--help / -h`
-
-Display help for a command.
-
-### Examples
-
-
-Example of initializing a new project with existing starter templates github repository url.
-
-```bash
-init with -u https://github.com/silver-radium/starter/tree/main/essential/next -g -i bun
-```
 
 ### Contributing
 
