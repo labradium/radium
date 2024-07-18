@@ -1,5 +1,11 @@
 # radium-init
 
+## 0.0.3
+
+### Patch Changes
+
+- [`ff6fc00`](https://github.com/silver-radium/init/commit/ff6fc00379fa782b0641bc00811f20c5d3c495a6) Thanks [@vgseven](https://github.com/vgseven)! - core: migrated from rimraf, tsup to bun
+
 ## 0.0.2
 
 ### Patch Changes
