@@ -1,5 +1,11 @@
 # radium-init
 
+## 0.0.4
+
+### Patch Changes
+
+- [`3b394dc`](https://github.com/silver-radium/init/commit/3b394dc63e94222071950674c77107bf8c6365c7) Thanks [@vgseven](https://github.com/vgseven)! - chore: output message issues resolved
+
 ## 0.0.3
 
 ### Patch Changes
