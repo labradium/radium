@@ -1,7 +1,7 @@
 {
-  "name": "@silver-radium/init",
+  "name": "radium-init",
   "private": false,
-  "version": "0.2.2",
+  "version": "0.1.0",
   "description": "Initialize any new project in seconds with your tools..",
   "license": "MIT",
   "author": "vgseven <contact@vgseven.com>",
@@ -25,7 +25,9 @@
   "type": "module",
   "exports": "./dist/index.js",
   "bin": {
-    "init": "./dist/index.js"
+    "radium-init": "./dist/index.js",
+    "init": "./dist/index.js",
+    "radium": "./dist/index.js"
   },
   "files": [
     "dist",
@@ -33,16 +35,17 @@
     "package.json"
   ],
   "engines": {
-    "bun": ">=1.1"
+    "node": ">=18.0.0"
   },
   "scripts": {
+    "dev": "jiti ./src/index.ts",
     "lint": "biome lint . --write",
-    "build": "bun build ./src/index.ts --outdir ./dist --target node --format esm",
+    "build": "tsup",
     "format": "biome format . --write",
-    "build:prepare": "bun run format && bun run lint && bun run build",
+    "build:prepare": "pnpm run format && pnpm run lint && pnpm run build",
     "release": "changeset publish --tag latest",
     "prepare": "husky",
-    "dev:prepare": "git pull origin main && bun i"
+    "dev:prepare": "git pull origin main && pnpm i"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
@@ -57,12 +60,11 @@
     "@biomejs/biome": "^1.8.3",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
-    "@types/bun": "^1.1.6",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.14.10",
-    "husky": "^9.0.11"
-  },
-  "peerDependencies": {
+    "@types/node": "^20.14.11",
+    "husky": "^9.1.0",
+    "jiti": "^1.21.6",
+    "tsup": "^8.1.2",
     "typescript": "^5.5.3"
   }
 }
