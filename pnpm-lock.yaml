@@ -11,6 +11,12 @@ importers:
       '@clack/prompts':
         specifier: ^0.7.0
         version: 0.7.0
+      '@octokit/core':
+        specifier: ^6.1.2
+        version: 6.1.2
+      '@octokit/plugin-paginate-rest':
+        specifier: ^11.3.3
+        version: 11.3.3(@octokit/core@6.1.2)
       '@octokit/plugin-rest-endpoint-methods':
         specifier: ^13.2.4
         version: 13.2.4(@octokit/core@6.1.2)

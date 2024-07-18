@@ -49,6 +49,8 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
+    "@octokit/core": "^6.1.2",
+    "@octokit/plugin-paginate-rest": "^11.3.3",
     "@octokit/plugin-rest-endpoint-methods": "^13.2.4",
     "axios": "^1.7.2",
     "commander": "^12.1.0",

@@ -1,9 +1,14 @@
-import { checkURL, getRepoInfo } from "@/functions/utils";
+import { downloadDirectory } from "../functions/get-template";
+import { updatePackageJson } from "../functions/prepare-project";
+import { checkURL, getRepoInfo } from "../functions/utils";
 import type { repoInfo } from "@/types/types";
 import * as terminal from "@clack/prompts";
-import { setTimeout } from "node:timers/promises";
+import * as fs from "node:fs";
+import * as path from "node:path";
+import { packageInstall } from "../functions/package-install";
+import { gitInit } from "../functions/git-init";
 
-export async function With() {
+export async function With(projName: string) {
   const s = terminal.spinner();
 
   const withOptions = await terminal.group(
@@ -16,6 +21,29 @@ export async function With() {
           validate: (value) => {
             if (value.length === 0) return "Template URL is required!";
           },
+        }),
+      choosePackageManager: () =>
+        terminal.select({
+          message: "Choose Package Manager",
+          initialValue: "npm",
+          options: [
+            {
+              value: "pnpm",
+              label: "pnpm",
+            },
+            {
+              value: "yarn",
+              label: "yarn",
+            },
+            {
+              value: "npm",
+              label: "npm",
+            },
+            {
+              value: "bun",
+              label: "bun",
+            },
+          ],
         }),
       install: () =>
         terminal.confirm({
@@ -48,9 +76,33 @@ export async function With() {
     }
 
     s.start(`Initializing Project with ${repo.repo}`);
-    await setTimeout(2000);
-    terminal.note("Setting up...", "Your Choices");
+
+    await downloadDirectory(repo.owner, repo.repo, repo.sub, projName);
+
+    const packageJSONPath = path.join(projName, "package.json");
+    if (fs.existsSync(packageJSONPath)) {
+      await updatePackageJson(projName, projName);
+    }
+
+    const projectPath = path.join(process.cwd(), projName);
+    if (withOptions.install) {
+      await packageInstall(projectPath, withOptions.choosePackageManager);
+    }
+
+    if (withOptions.git) {
+      await gitInit(projectPath);
+    }
+
     s.stop("Project initialized successfully!");
+
+    let message = "";
+    if (!withOptions.install) {
+      message = `cd ${projName} \n${withOptions.choosePackageManager} i \n${withOptions.choosePackageManager} run dev`;
+    } else {
+      message = `cd ${projName} \n${withOptions.choosePackageManager} run dev`;
+    }
+
+    terminal.note(message, "Happy Coding!");
     process.exit(0);
   } catch (error) {
     terminal.note(`Error: ${error}`, "Project Initialization Failed");
