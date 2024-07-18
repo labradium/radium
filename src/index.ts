@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as terminal from "@clack/prompts";
 import * as color from "picocolors";
 import { New } from "./commands/new";
@@ -48,3 +50,8 @@ export async function init() {
     await With(chooseProjectMethod.name);
   }
 }
+
+init().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

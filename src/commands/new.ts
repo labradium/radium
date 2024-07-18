@@ -2,8 +2,8 @@ import { copyFiles } from "../functions/prepare-project";
 import * as terminal from "@clack/prompts";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { packageInstall } from "../functions/package-install";
-import { gitInit } from "../functions/git-init";
+import { packageInstall } from "../functions/prepare-project";
+import { gitInit } from "../functions/prepare-project";
 import { updatePackageJson } from "../functions/prepare-project";
 
 export async function New(projName: string) {

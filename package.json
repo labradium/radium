@@ -10,9 +10,9 @@
     "url": "https://github.com/silver-radium/init.git",
     "directory": "silver-radium/init"
   },
-  "homepage": "https://github.com/silver-radium/init",
+  "homepage": "https://github.com/silver-radium/init/blob/main/README.md",
   "keywords": ["radium", "react", "nextjs", "tailwindcss", "radix-ui", "astro", "solidjs", "million"],
-  "module": "index.ts",
+  "module": "./src/index.ts",
   "type": "module",
   "exports": "./dist/index.js",
   "bin": {
@@ -20,16 +20,16 @@
     "init": "./dist/index.js",
     "radium": "./dist/index.js"
   },
-  "files": ["dist", "README.md", "package.json"],
+  "files": ["dist", "README.md", "package.json", "lib"],
   "engines": {
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "jiti ./src/cli.ts",
+    "dev": "jiti ./src/index.ts",
     "lint": "biome lint . --write",
     "build": "tsup",
     "format": "biome format . --write",
-    "build:prepare": "pnpm run format && pnpm run lint && pnpm run build",
+    "build:prepare": "rimraf dist && pnpm run format && pnpm run lint && pnpm run build",
     "release": "changeset publish --tag latest",
     "prepare": "husky",
     "dev:prepare": "git pull origin main && pnpm i"
@@ -40,7 +40,6 @@
     "@octokit/plugin-paginate-rest": "^11.3.3",
     "@octokit/plugin-rest-endpoint-methods": "^13.2.4",
     "axios": "^1.7.2",
-    "commander": "^12.1.0",
     "fs-extra": "^11.2.0",
     "octokit": "^4.0.2",
     "picocolors": "^1.0.1"
@@ -54,6 +53,7 @@
     "husky": "^9.1.0",
     "jiti": "^1.21.6",
     "tsup": "^8.1.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "rimraf": "^6.0.1"
   }
 }
