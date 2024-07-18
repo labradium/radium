@@ -65,17 +65,20 @@ export async function New(projName: string) {
     if (fs.existsSync(packageJSONPath)) {
       await updatePackageJson(projName, projName);
     }
+    s.stop("Project initialized successfully!");
 
+    s.start("Installing Dependencies");
     const projectPath = path.join(process.cwd(), projName);
     if (newOptions.install) {
       await packageInstall(projectPath, newOptions.choosePackageManager);
     }
+    s.stop("Dependencies installed successfully!");
 
+    s.start("Initializing Git");
     if (newOptions.git) {
       await gitInit(projectPath);
     }
-
-    s.stop("Project initialized successfully!");
+    s.stop("Git initialized successfully!");
 
     let message = "";
     if (!newOptions.install) {

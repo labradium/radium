@@ -42,12 +42,5 @@ export async function gitInit(projectPath: string): Promise<void> {
 
   await fs.access(fullPath);
 
-  const { stdout, stderr } = await execAsync("git init", { cwd: fullPath });
-
-  if (stderr) {
-    console.error("Git initialization warning:", stderr);
-  }
-
-  console.log("Git repository initialized successfully.");
-  console.log(stdout.trim());
+  await execAsync("git init", { cwd: fullPath });
 }

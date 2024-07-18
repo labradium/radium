@@ -84,16 +84,20 @@ export async function With(projName: string) {
       await updatePackageJson(projName, projName);
     }
 
+    s.stop("Project initialized successfully!");
+
+    s.start("Installing Dependencies");
     const projectPath = path.join(process.cwd(), projName);
     if (withOptions.install) {
       await packageInstall(projectPath, withOptions.choosePackageManager);
     }
+    s.stop("Dependencies installed successfully!");
 
+    s.start("Initializing Git");
     if (withOptions.git) {
       await gitInit(projectPath);
     }
-
-    s.stop("Project initialized successfully!");
+    s.stop("Git initialized successfully!");
 
     let message = "";
     if (!withOptions.install) {
