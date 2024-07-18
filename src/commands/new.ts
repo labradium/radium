@@ -1,58 +1,19 @@
-// import { getPath } from "@/functions/get-path";
 import * as terminal from "@clack/prompts";
-import * as color from "picocolors";
 import { setTimeout } from "node:timers/promises";
 
-export async function New(): Promise<void> {
-  // const libPath = getPath("lib");
+export async function New() {
   const s = terminal.spinner();
 
-  terminal.intro(`${color.bgCyan(color.black(" Initialize New Project With Radium, Let's Get Started! "))}`);
-
-  const newProject = await terminal.group(
+  const newOptions = await terminal.group(
     {
-      name: () =>
-        terminal.text({
-          message: "What is the name of your project?",
-          placeholder: "radium",
-          validate: (value) => {
-            if (value.length === 0) return "Project name is required!";
-          },
-        }),
-      note: () => {
+      noteTS: () => {
         terminal.note("We use TypeScript by default..", "For Better Type Safety");
       },
-      chooseBase: () =>
-        terminal.select({
-          message: "Select Base Framework or Library",
-          initialValue: "next",
-          options: [
-            {
-              value: "next",
-              label: "Next.js",
-            },
-            {
-              value: "other",
-              label: "React.js",
-            },
-            {
-              value: "package",
-              label: "TypeScript Package",
-            },
-          ],
-        }),
+      noteNX: () => terminal.note("Next.js is the only supported framework.", "Currently, "),
       chooseExtras: () =>
         terminal.multiselect({
           message: "Add your favorite extras?",
           options: [
-            {
-              value: "eslint",
-              label: "ESlint",
-            },
-            {
-              value: "prettier",
-              label: "Prettier",
-            },
             {
               value: "husky",
               label: "Husky",
@@ -78,7 +39,7 @@ export async function New(): Promise<void> {
       choosePackageManager: () =>
         terminal.select({
           message: "Select Package Manager",
-          initialValue: "bun",
+          initialValue: "pnpm",
           options: [
             {
               value: "pnpm",
@@ -105,7 +66,7 @@ export async function New(): Promise<void> {
         }),
       git: () =>
         terminal.confirm({
-          message: "Init Git?",
+          message: "Initialize Git?",
           initialValue: false,
         }),
     },
@@ -117,16 +78,8 @@ export async function New(): Promise<void> {
     }
   );
 
-  try {
-    s.start("Initializing Project");
-
-    await setTimeout(3000);
-    console.log(newProject);
-    // console.log(libPath);
-
-    s.stop("Project initialized successfully!");
-  } catch (error) {
-    terminal.note(`Error: ${error}`, "Project Initialization Failed");
-    process.exit(1);
-  }
+  s.start("Initializing Project");
+  await setTimeout(2000);
+  terminal.note(`${newOptions}`, "Your Choices");
+  s.stop("Project initialized successfully!");
 }

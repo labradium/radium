@@ -38,7 +38,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "jiti ./src/index.ts",
+    "dev": "jiti ./src/cli.ts",
     "lint": "biome lint . --write",
     "build": "tsup",
     "format": "biome format . --write",
