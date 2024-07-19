@@ -1,5 +1,11 @@
 # radium-init
 
+## 0.0.7
+
+### Patch Changes
+
+- [`5190a24`](https://github.com/silver-radium/init/commit/5190a2468e2fb3365459871e42537d1078fb5058) Thanks [@vgseven](https://github.com/vgseven)! - core: migrated to bun
+
 ## 0.0.6
 
 ### Patch Changes
