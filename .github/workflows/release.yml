@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   release:
@@ -17,64 +18,80 @@ jobs:
 
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh -y
-
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: ./.github/actions/setup
-
-      - name: Set up Node (lts)
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ">=18.0.0"
-          cache: "pnpm"
+          node-version: "18"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: build before release
-        run: pnpm run build:prepare
+      - name: Build project
+        run: pnpm run build
 
-      - name: Check for existing release PR
-        id: check_pr
-        run: |
-          prs=$(gh pr list --repo ${{ github.repository }} --label "release" --state open --json number --jq '.[0].number')
-          echo "pr_number=${prs}" >> $GITHUB_ENV
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create or update release pull request
-        if: steps.check_pr.outputs.pr_number == ''
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
         uses: changesets/action@v1
         with:
+          version: pnpm run version
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
-          version: pnpm changeset version
-          publish: pnpm changeset publish
+          publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_ENV: "production"
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Update existing release pull request
-        if: steps.check_pr.outputs.pr_number != ''
+      - name: Update changelog
+        if: steps.changesets.outputs.hasChangesets == 'true'
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git checkout -b update-release-pr
-          bun changeset version
-          git add .
-          git commit -m "chore: update release PR with latest changes"
-          git push origin update-release-pr
-          gh pr edit ${{ env.pr_number }} --body "Updated with latest changes."
+          pnpm run generate-changelog
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add CHANGELOG.md
+          git commit -m "docs: update changelog"
+          git push
+
+      - name: Create GitHub Release
+        if: steps.changesets.outputs.published == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_ENV: "production"
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          gh release create v$VERSION --generate-notes
+
+      - name: Sync main branch
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          git pull origin main
+          git push origin main
+
+      - name: Output release information
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          echo "🎉 New version published to npm!"
+          echo "Version: ${{ steps.changesets.outputs.publishedPackages }}"
