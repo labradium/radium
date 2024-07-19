@@ -1,5 +1,11 @@
 # radium-init
 
+## 0.0.6
+
+### Patch Changes
+
+- [`d1b9224`](https://github.com/silver-radium/init/commit/d1b92241597e8f4c4af5cb6ec4108d0a50ef28cf) Thanks [@vgseven](https://github.com/vgseven)! - chore: resolving workflow issues
+
 ## 0.0.5
 
 ### Patch Changes
