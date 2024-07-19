@@ -1,5 +1,13 @@
 # radium-init
 
+## 0.0.5
+
+### Patch Changes
+
+- [`6e95a93`](https://github.com/silver-radium/init/commit/6e95a93c698cd006ba42d3f73ca5bef5156479ba) Thanks [@vgseven](https://github.com/vgseven)! - core: upgrade to custom tooling mvp
+
+- [`909d722`](https://github.com/silver-radium/init/commit/909d72256082ee0017ed7f52a68390092fe2068a) Thanks [@vgseven](https://github.com/vgseven)! - core: base and extras added for biome, shadcn-ui and theme
+
 ## 0.0.4
 
 ### Patch Changes
