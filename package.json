@@ -25,15 +25,15 @@
     "bun": ">=1.1"
   },
   "scripts": {
-    "dev": "bun ./src/index.ts",
+    "dev": "tsup ./src/index.ts --watch",
     "lint": "biome lint . --write",
-    "build": "bun build ./src/index.ts --outdir ./dist --target node --format esm",
-    "clean": "bun ./scripts/clean.ts",
+    "build": "tsup",
+    "clean": "rimraf dist node_modules",
     "format": "biome format . --write",
-    "build:prepare": "bun ./scripts/build.ts && bun run format && bun run lint && bun run build",
+    "build:prepare": "rimraf dist && pnpm run format && pnpm run lint && pnpm run build",
     "release": "changeset publish --tag latest",
     "prepare": "husky",
-    "dev:prepare": "git pull origin main && bun i"
+    "dev:prepare": "git pull origin main && pnpm i"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
@@ -49,10 +49,11 @@
     "@biomejs/biome": "^1.8.3",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
-    "@types/bun": "^1.1.6",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.11",
     "husky": "^9.1.0",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.2.0",
     "typescript": "^5.5.3"
   }
 }
