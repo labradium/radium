@@ -52,7 +52,7 @@
     "@changesets/cli": "^2.27.7",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.11",
-    "husky": "^9.1.0",
+    "husky": "^9.1.1",
     "jiti": "^1.21.6",
     "rimraf": "^6.0.1",
     "tsup": "^8.2.0",

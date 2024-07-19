@@ -1,6 +1,6 @@
-import fs from "fs-extra";
-import path from "node:path";
-// import { getPath } from "@/functions/utils";
+import * as fs from "fs-extra";
+import * as path from "node:path";
+import { getPath } from "../functions/utils";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
 
@@ -17,8 +17,8 @@ export async function updatePackageJson(projectPath: string, projectName: string
 }
 
 export async function copyFiles(projectName: string): Promise<void> {
-  // const sourceDir = path.join(getPath("lib"), "base");
-  const sourceDir = path.join(process.cwd(), "lib", "base");
+  const sourceDir = path.join(getPath("lib"), "base");
+  // const sourceDir = path.join(process.cwd(), "lib", "base");
   const destinationDir = path.join(process.cwd(), projectName);
 
   if (!fs.existsSync(sourceDir)) {
