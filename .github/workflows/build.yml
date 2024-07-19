@@ -1,4 +1,4 @@
-name: Build
+name: CI
 
 on:
   push:
@@ -13,38 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Check out the repository code
       - name: Check out repository code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      # Set up Bun with the latest version
+      - name: Set up Bun (latest)
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: "20"
+          bun-version: latest
+          no-cache: false
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
+      # Install dependencies with Bun
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
-      - name: Run lint
-        run: pnpm run lint
-
-      - name: Run build
-        run: pnpm run build
+      # Run lint and build commands with Bun
+      - name: Run lint and build
+        run: bun run build:prepare

@@ -6,7 +6,7 @@
       "repo": "silver-radium/init"
     }
   ],
-  "commit": true,
+  "commit": false,
   "fixed": [],
   "linked": [],
   "access": "public",

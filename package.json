@@ -25,16 +25,16 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "pnpm jiti ./src/index.ts",
+    "dev": "bun ./src/index.ts",
     "lint": "biome lint . --write",
-    "build": "tsup",
-    "clean": "rimraf dist node_modules",
+    "build": "bun build ./src/index.ts --outdir ./dist --target node --format esm",
+    "clean": "bun ./scripts/clean.ts",
     "format": "biome format . --write",
-    "build:prepare": "pnpm run format && pnpm run lint && pnpm run build",
+    "build:prepare": "bun ./scripts/build.ts && bun run format && bun run lint && bun run build",
     "version": "changeset version",
     "release": "changeset publish --tag latest",
     "prepare": "husky",
-    "dev:prepare": "git pull origin main && pnpm i"
+    "dev:prepare": "git pull origin main && bun i"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
@@ -50,12 +50,15 @@
     "@biomejs/biome": "^1.8.3",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
+    "@types/bun": "^1.1.6",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.11",
     "husky": "^9.1.1",
-    "jiti": "^1.21.6",
-    "rimraf": "^6.0.1",
-    "tsup": "^8.2.0",
     "typescript": "^5.5.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
   }
 }
