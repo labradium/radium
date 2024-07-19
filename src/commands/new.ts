@@ -84,36 +84,36 @@ export async function New(projName: string) {
     }
     s.stop("Project initialized successfully!");
 
-    s.message("Adding biome...");
     if (newOptions.addBiome) {
+      s.message("Adding biome...");
       await addBiome(projName);
+      s.stop("Biome added successfully!");
     }
-    s.stop("Biome added successfully!");
 
-    s.start("Adding shadcn-ui...");
     if (newOptions.addShadcnUI) {
+      s.start("Adding shadcn-ui...");
       await addShadcnUI(projName);
+      s.stop("shadcn-ui added successfully!");
     }
-    s.stop("shadcn-ui added successfully!");
 
-    s.start("Adding theme...");
     if (newOptions.addTheme) {
+      s.start("Adding theme...");
       await addTheme(projName);
+      s.stop("theme added successfully!");
     }
-    s.stop("theme added successfully!");
 
-    s.start("Installing Dependencies");
     const projectPath = path.join(process.cwd(), projName);
     if (newOptions.install) {
+      s.start("Installing Dependencies");
       await packageInstall(projectPath, newOptions.choosePackageManager);
+      s.stop("Dependencies installed successfully!");
     }
-    s.stop("Dependencies installed successfully!");
 
-    s.start("Initializing Git");
     if (newOptions.git) {
+      s.start("Initializing Git");
       await gitInit(projectPath);
+      s.stop("Git initialized successfully!");
     }
-    s.stop("Git initialized successfully!");
 
     let message = "";
     if (!newOptions.install) {
