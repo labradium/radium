@@ -28,7 +28,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ">=18.0.0"
-          cache: "pnpm-lock.yaml"
 
       - name: Install dependencies
         run: pnpm install
