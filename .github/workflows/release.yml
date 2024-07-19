@@ -25,16 +25,16 @@ jobs:
         run: sudo apt-get install gh -y
 
       - name: Set up Bun (latest)
-        uses: oven-sh/setup-bun@v1
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
-          no-cache: false
+          node-version: ">=18.0.0"
+          cache: "pnpm-lock.yaml"
 
       - name: Install dependencies
-        run: bun install
+        run: pnpm install
 
       - name: build before release
-        run: bun run build:prepare
+        run: pnpm run build:prepare
 
       - name: Check for existing release PR
         id: check_pr
@@ -50,8 +50,8 @@ jobs:
         with:
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
-          version: bun changeset version
-          publish: bun changeset publish
+          version: pnpm changeset version
+          publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
