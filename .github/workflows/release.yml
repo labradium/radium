@@ -28,6 +28,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ">=18.0.0"
+          cache: "pnpm"
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
 
       - name: Install dependencies
         run: pnpm install
