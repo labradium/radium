@@ -24,16 +24,16 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get install gh -y
 
-      - name: Set up Bun (latest)
-        uses: actions/setup-node@v4
-        with:
-          node-version: ">=18.0.0"
-          cache: "pnpm"
-
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup
+
+      - name: Set up Node (lts)
+        uses: actions/setup-node@v4
+        with:
+          node-version: ">=18.0.0"
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
