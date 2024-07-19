@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  issues: write
 
 jobs:
   release:
@@ -19,9 +18,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -47,30 +43,43 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
-        run: pnpm install
+      - name: Build before release
+        run: pnpm run build:prepare
 
-      - name: Build project
-        run: pnpm run build
+      - name: Check for existing release PR
+        id: check_pr
+        run: |
+          prs=$(gh pr list --repo ${{ github.repository }} --label "release" --state open --json number --jq '.[0].number')
+          echo "pr_number=${prs}" >> $GITHUB_ENV
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
+      - name: Create or update release pull request
+        if: steps.check_pr.outputs.pr_number == ''
         uses: changesets/action@v1
         with:
-          # Run the version command defined in changeset
-          version: pnpm changeset version
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
+          version: pnpm changeset version
           publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_ENV: "production"
 
-      - name: Create GitHub Release
-        if: steps.changesets.outputs.published == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update existing release pull request
+        if: steps.check_pr.outputs.pr_number != ''
         run: |
-          VERSION=$(node -p "require('./package.json').version")
-          gh release create v$VERSION --generate-notes
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git checkout -b update-release-pr
+          bun changeset version
+          git add .
+          git commit -m "chore: update release PR with latest changes"
+          git push origin update-release-pr
+          gh pr edit ${{ env.pr_number }} --body "Updated with latest changes."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_ENV: "production"
