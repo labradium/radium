@@ -1,12 +1,12 @@
-import { downloadDirectory } from "@/functions/get-template";
-import { updatePackageJson } from "@/functions/prepare-project";
-import { checkURL, getRepoInfo } from "@/functions/utils";
-import type { repoInfo } from "@/types/types";
+import { downloadDirectory } from "../functions/get-template";
+import { updatePackageJson } from "../functions/prepare-project";
+import { checkURL, getRepoInfo } from "../functions/utils";
+import type { repoInfo } from "../types/types";
 import * as terminal from "@clack/prompts";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { packageInstall } from "@/functions/prepare-project";
-import { gitInit } from "@/functions/prepare-project";
+import { packageInstall } from "../functions/prepare-project";
+import { gitInit } from "../functions/prepare-project";
 
 export async function With(projName: string) {
   const s = terminal.spinner();

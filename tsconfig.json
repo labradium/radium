@@ -8,11 +8,7 @@
     "esModuleInterop": true,
     "skipLibCheck": false,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "noUnusedParameters": true
   },
   "exclude": ["dist", "node_modules", "lib"],
   "include": ["src/**/*.ts", "scripts/**/*.ts"]
