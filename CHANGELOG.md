@@ -1,5 +1,11 @@
 # radium-init
 
+## 0.0.8
+
+### Patch Changes
+
+- [`05075fe`](https://github.com/silver-radium/init/commit/05075fe966c0eec9e3585e015749339100dcbcb0) Thanks [@vgseven](https://github.com/vgseven)! - core: init new and init with commands configured
+
 ## 0.0.7
 
 ### Patch Changes

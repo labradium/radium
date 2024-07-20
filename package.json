@@ -1,7 +1,7 @@
 {
   "name": "radium-init",
   "private": false,
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Initialize any new project in seconds with your tools..",
   "license": "MIT",
   "author": "vgseven <contact@vgseven.com>",
