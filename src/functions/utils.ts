@@ -1,5 +1,6 @@
 import { fileURLToPath } from "node:url";
 import * as path from "node:path";
+import * as fs from "node:fs";
 
 export async function checkURL(url: string) {
   const response = await fetch(url);
@@ -10,9 +11,7 @@ export async function checkURL(url: string) {
 }
 
 export function getRepoInfo(url: string) {
-  const [, , , owner, repo, tree, branch, ...subArr] = url
-    .replace(".git", "")
-    .split("/");
+  const [, , , owner, repo, tree, branch, ...subArr] = url.replace(".git", "").split("/");
   /** Ingnore first 3 elemets such as https:// github .com/ */
 
   const sub = subArr.join("/") || ".";
@@ -29,4 +28,12 @@ export function getPath(dir: string): string {
   const pkgPath = path.join(pkgRoot, dir);
 
   return pkgPath;
+}
+
+export function getVersion() {
+  const pkgPath = getPath("package.json");
+
+  const pkg = fs.readFileSync(pkgPath, "utf8").toString();
+  const version = JSON.parse(pkg).version;
+  return version;
 }

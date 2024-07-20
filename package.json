@@ -29,14 +29,20 @@
     "init": "./dist/index.js",
     "radium": "./dist/index.js"
   },
-  "files": ["dist", "README.md", "package.json", "lib"],
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "lib"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },
   "scripts": {
     "dev": "bun ./src/index.ts",
     "lint": "biome lint . --write",
-    "build": "bun build ./src/index.ts --outdir ./dist --target node --format esm",
+    "build": "bun ./scripts/build.ts && bun build ./src/index.ts --outdir ./dist --target node --format esm",
+    "clean": "bun ./scripts/clean.ts",
     "format": "biome format . --write",
     "build:prepare": "bun run format && bun run lint && bun run build",
     "version": "changeset version",
