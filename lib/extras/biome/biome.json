@@ -8,7 +8,17 @@
     "lineWidth": 80,
     "lineEnding": "lf",
     "attributePosition": "auto",
-    "ignore": [".vscode", ".next", ".vercel", ".env", ".changeset", ".husky", "node_modules", "build", "dist"]
+    "ignore": [
+      ".vscode",
+      ".next",
+      ".vercel",
+      ".env",
+      ".changeset",
+      ".husky",
+      "node_modules",
+      "build",
+      "dist"
+    ]
   },
   "organizeImports": {
     "enabled": true
@@ -21,7 +31,17 @@
         "noUnusedVariables": "warn"
       }
     },
-    "ignore": [".vscode", ".next", ".vercel", ".env", ".changeset", ".husky", "node_modules", "build", "dist"]
+    "ignore": [
+      ".vscode",
+      ".next",
+      ".vercel",
+      ".env",
+      ".changeset",
+      ".husky",
+      "node_modules",
+      "build",
+      "dist"
+    ]
   },
   "javascript": {
     "formatter": {

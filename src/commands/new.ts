@@ -1,11 +1,11 @@
-import { copyFiles } from "../functions/prepare-project";
+import { copyFiles } from "@/functions/prepare-project";
 import * as terminal from "@clack/prompts";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { packageInstall } from "../functions/prepare-project";
-import { gitInit } from "../functions/prepare-project";
-import { updatePackageJson } from "../functions/prepare-project";
-import { addBiome, addShadcnUI, addTheme } from "../functions/setting-project";
+import { packageInstall } from "@/functions/prepare-project";
+import { gitInit } from "@/functions/prepare-project";
+import { updatePackageJson } from "@/functions/prepare-project";
+import { addBiome, addShadcnUI, addTheme } from "@/functions/setting-project";
 
 export async function New(projName: string) {
   const s = terminal.spinner();
@@ -13,10 +13,21 @@ export async function New(projName: string) {
   const newOptions = await terminal.group(
     {
       noteTS: () => {
-        terminal.note("We use TypeScript by default..", "For Better Type Safety");
+        terminal.note(
+          "We use TypeScript by default..",
+          "For Better Type Safety"
+        );
       },
-      noteNX: () => terminal.note("Next.js is the only supported framework, Soon React and others.", "Currently"),
-      noteBase: () => terminal.note("Base Next.js Template consist TailwindCSS and Geist Font..", "Base Template Initialized"),
+      noteNX: () =>
+        terminal.note(
+          "Next.js is the only supported framework, Soon React and others.",
+          "Currently"
+        ),
+      noteBase: () =>
+        terminal.note(
+          "Base Next.js Template consist TailwindCSS and Geist Font..",
+          "Base Template Initialized"
+        ),
       addBiome: () =>
         terminal.confirm({
           message: "Do You want to add biome?",

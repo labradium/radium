@@ -5,7 +5,8 @@ import { ThemeProvider } from "@/lib/providers/theme-provider";
 
 export const metadata: Metadata = {
   title: "Next Essential",
-  description: "Next.js Essential Starter Template to start your next next.js project",
+  description:
+    "Next.js Essential Starter Template to start your next next.js project",
   icons: {
     icon: "favicon.png",
   },
@@ -17,9 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fonts.GeistSans.variable} ${fonts.GeistMono.variable} font-geistMono`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${fonts.GeistSans.variable} ${fonts.GeistMono.variable} font-geistMono`}
+      suppressHydrationWarning
+    >
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>

@@ -10,7 +10,9 @@ export async function checkURL(url: string) {
 }
 
 export function getRepoInfo(url: string) {
-  const [, , , owner, repo, tree, branch, ...subArr] = url.replace(".git", "").split("/");
+  const [, , , owner, repo, tree, branch, ...subArr] = url
+    .replace(".git", "")
+    .split("/");
   /** Ingnore first 3 elemets such as https:// github .com/ */
 
   const sub = subArr.join("/") || ".";

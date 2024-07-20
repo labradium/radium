@@ -1,5 +1,5 @@
 import * as fs from "fs-extra";
-import { getPath } from "../functions/utils";
+import { getPath } from "@/functions/utils";
 import * as path from "node:path";
 
 export async function addBiome(projectPath: string): Promise<void> {
