@@ -1,6 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "formatter": {
+    "include": ["**/*.{js,jsx,ts,tsx,json}"],
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
@@ -21,6 +22,7 @@
     "enabled": true
   },
   "linter": {
+    "include": ["**/*.{ts}"],
     "enabled": true,
     "rules": {
       "recommended": true,
