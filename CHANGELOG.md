@@ -1,5 +1,11 @@
 # radium-init
 
+## 0.0.9
+
+### Patch Changes
+
+- [`cc13424`](https://github.com/silver-radium/init/commit/cc13424079ca128484a7ea6809fd61c8ed0bd1c5) Thanks [@vgseven](https://github.com/vgseven)! - core: zod types used to validate values
+
 ## 0.0.8
 
 ### Patch Changes
