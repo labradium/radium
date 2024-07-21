@@ -18,7 +18,7 @@ export async function With(projName: string, url: string) {
       choosePackageManager: () =>
         terminal.select({
           message: "Choose Package Manager",
-          initialValue: "npm",
+          initialValue: "bun",
           options: [
             {
               value: "pnpm",
