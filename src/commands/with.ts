@@ -8,21 +8,13 @@ import * as path from "node:path";
 import { packageInstall } from "@/functions/prepare-project";
 import { gitInit } from "@/functions/prepare-project";
 
-export async function With(projName: string) {
+export async function With(projName: string, url: string) {
   const s = terminal.spinner();
 
   const withOptions = await terminal.group(
     {
       note: () =>
         terminal.note("Project with existing template...", "Setting up"),
-      chooseTemplate: () =>
-        terminal.text({
-          message: "Enter the URL of the template...",
-          placeholder: "https://github.com/vgseven/next-essential",
-          validate: (value) => {
-            if (value.length === 0) return "Template URL is required!";
-          },
-        }),
       choosePackageManager: () =>
         terminal.select({
           message: "Choose Package Manager",
@@ -66,11 +58,11 @@ export async function With(projName: string) {
   );
 
   try {
-    const urlCheck = await checkURL(withOptions.chooseTemplate);
+    const urlCheck = await checkURL(url);
     let repo: repoInfo;
 
     if (urlCheck) {
-      repo = getRepoInfo(withOptions.chooseTemplate);
+      repo = getRepoInfo(url);
     } else {
       terminal.note("Invalid URL", "Project Initialization Failed");
       process.exit(1);

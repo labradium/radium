@@ -25,9 +25,10 @@ export async function init() {
   program
     .command("with")
     .option("-u, --url <url>", "Starter template url")
+    .option("-n, --name <name>", "Project name")
     .description("Initialize a new project with starter template")
     .action(async (value) => {
-      await With(value.url);
+      await With(value.name, value.url);
     });
 
   program.parse(process.argv);
