@@ -1,7 +1,6 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "formatter": {
-    "include": ["**/*.{js,jsx,ts,tsx,json}"],
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
@@ -22,12 +21,32 @@
     "enabled": true
   },
   "linter": {
-    "include": ["**/*.{ts}"],
     "enabled": true,
     "rules": {
       "recommended": true,
       "correctness": {
         "noUnusedVariables": "warn"
+      },
+      "security": {
+        "recommended": true
+      },
+      "performance": {
+        "recommended": true
+      },
+      "style": {
+        "recommended": true
+      },
+      "nursery": {
+        "recommended": true
+      },
+      "complexity": {
+        "recommended": true
+      },
+      "suspicious": {
+        "recommended": true
+      },
+      "a11y": {
+        "recommended": true
       }
     },
     "ignore": [

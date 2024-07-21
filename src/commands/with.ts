@@ -1,7 +1,7 @@
 import { downloadDirectory } from "@/functions/get-template";
 import { updatePackageJson } from "@/functions/prepare-project";
 import { checkURL, getRepoInfo } from "@/functions/utils";
-import type { repoInfo } from "@/types/types";
+import type { RepoInfo } from "@/types/types";
 import * as terminal from "@clack/prompts";
 import * as fs from "node:fs";
 import * as path from "node:path";
@@ -59,7 +59,7 @@ export async function With(projName: string, url: string) {
 
   try {
     const urlCheck = await checkURL(url);
-    let repo: repoInfo;
+    let repo: RepoInfo;
 
     if (urlCheck) {
       repo = getRepoInfo(url);
