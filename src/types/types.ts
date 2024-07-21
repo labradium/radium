@@ -26,7 +26,7 @@ export const newArgsValuesSchema = z.object({
 export type NewArgsValues = z.infer<typeof newArgsValuesSchema>;
 
 export const withArgsValuesSchema = newArgsValuesSchema.extend({
-  url: z.string().url(),
+  url: z.string().url().includes("github.com"),
 });
 
 export type WithArgsValues = z.infer<typeof withArgsValuesSchema>;

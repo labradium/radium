@@ -29,12 +29,7 @@
     "init": "./dist/index.js",
     "radium": "./dist/index.js"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "package.json",
-    "lib"
-  ],
+  "files": ["dist", "README.md", "package.json", "lib"],
   "engines": {
     "node": ">=18.0.0"
   },
