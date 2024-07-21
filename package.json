@@ -1,7 +1,7 @@
 {
   "name": "radium-init",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Initialize any new project in seconds with your tools..",
   "license": "MIT",
   "author": "vgseven <contact@vgseven.com>",
@@ -29,7 +29,12 @@
     "init": "./dist/index.js",
     "radium": "./dist/index.js"
   },
-  "files": ["dist", "README.md", "package.json", "lib"],
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "lib"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },
