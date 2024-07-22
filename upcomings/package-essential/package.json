@@ -1,0 +1,11 @@
+{
+  "name": "package-essential",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
