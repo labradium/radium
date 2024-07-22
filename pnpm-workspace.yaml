@@ -1,4 +1,4 @@
 packages:
   - "next/*"
-  - "starter/*"
+  - "starters/*"
   - "upcomings/*"

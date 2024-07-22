@@ -5,9 +5,7 @@
   "format": "",
   "lint": "",
   "devDependencies": {
-    "@types/node": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+    "@types/node": "latest",
+    "typescript": "^5.5.3"
   }
 }

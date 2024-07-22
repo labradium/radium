@@ -1,12 +1,11 @@
 # Next Essential
 
-Next.js Essential - I use this template to start my every next.js project, it's initilized with [Init](https://github.com/silver-radium/init) and setup with most of the essential tools.
+Next.js Essential - An Essential Template for Next.js, it's initilized with [Init](https://github.com/silver-radium/init) and setup with most of the essential tools.
 
-##### You can use this template to start your next.js project, Use it as `Template` or `git clone` or Initialize with `init`
 
 ## Getting Started
 
-#### 1. Init (Recommended) [Install Init](https://github.com/silver-radium/init)
+#### Init - [Install Init](https://github.com/silver-radium/init)
 
 [Init](https://github.com/silver-radium/init) is an CLI tool to initialize any project. It'll install dependencies, initialize as git repository, and prepare your project for development and also you can setup your project with your custom toolings.
 
@@ -23,23 +22,6 @@ choose to git and install dependencies
 
 ###### This will install dependencies and initialize as git repository.
 
-#### 2. Git
-
-```bash
-git clone https://github.com/vgseven/next-essential.git
-```
-
-```bash
-cd next-essential
-```
-
-```bash
-bun i
-```
-
-```bash
-bun run dev
-```
 
 ## Features
 
