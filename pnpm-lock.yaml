@@ -97,7 +97,7 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
 
-  starters/next-essential:
+  starter/next-essential:
     dependencies:
       '@radix-ui/react-icons':
         specifier: ^1.3.0
@@ -164,7 +164,7 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
 
-  upcomings/blog:
+  upcoming/blog:
     dependencies:
       '@radix-ui/react-icons':
         specifier: ^1.3.0
@@ -228,7 +228,7 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
 
-  upcomings/docs:
+  upcoming/docs:
     dependencies:
       '@radix-ui/react-icons':
         specifier: ^1.3.0
@@ -292,7 +292,7 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
 
-  upcomings/next-supa-unified:
+  upcoming/next-supa-unified:
     dependencies:
       '@radix-ui/react-icons':
         specifier: ^1.3.0
@@ -356,7 +356,7 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
 
-  upcomings/package-essential:
+  upcoming/package-essential:
     devDependencies:
       '@types/node':
         specifier: latest
