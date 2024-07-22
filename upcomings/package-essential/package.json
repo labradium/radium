@@ -2,6 +2,8 @@
   "name": "package-essential",
   "module": "index.ts",
   "type": "module",
+  "format": "",
+  "lint": "",
   "devDependencies": {
     "@types/node": "latest"
   },

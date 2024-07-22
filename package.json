@@ -1,24 +1,24 @@
 {
-	"name": "templates",
-	"private": true,
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"build": "turbo build",
-		"dev": "turbo dev",
-		"lint": "turbo lint",
-		"finetune": "biome format . --write && biome lint . --write",
-		"prepare": "husky",
-		"build:prepare": "bun run finetune && bun run lint && bun run build",
-		"dev:prepare": "git pull origin main && bun i"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
-		"husky": "^9.0.11",
-		"turbo": "^2.0.6"
-	},
-	"engines": {
-		"node": ">=20.0.0"
-	},
-	"packageManager": "pnpm@9.5.0"
+  "name": "templates",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "biome format . --write",
+    "prepare": "husky",
+    "build:prepare": "pnpm run lint && pnpm run format && pnpm run build",
+    "dev:prepare": "git pull origin main && pnpm i"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "husky": "^9.0.11",
+    "turbo": "^2.0.6"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@9.6.0"
 }
