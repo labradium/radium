@@ -12,7 +12,7 @@
     "clean": "turbo clean",
     "root:format": "biome format . --write",
     "root:lint": "biome lint . --fix",
-    "root:clean": "",
+    "root:clean": "rimraf node_modules && rimraf .turbo",
     "prepare": "husky",
     "build:prepare": "pnpm run lint && pnpm run format && pnpm run build",
     "dev:prepare": "git pull origin main && pnpm i"

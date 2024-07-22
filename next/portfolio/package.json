@@ -9,6 +9,7 @@
 		"start": "next start",
 		"lint": "biome lint . --write",
 		"format": "biome format . --write",
+		"clean": "pnpm rimraf node_modules && pnpm rimraf .turbo && pnpm rimraf .next",
 		"ui:add": "pnpm dlx shadcn-ui@latest add",
 		"build:prepare": "pnpm run format && pnpm run lint && pnpm run build"
 	},
@@ -36,6 +37,7 @@
 		"autoprefixer": "^10.4.19",
 		"postcss": "^8.4.39",
 		"prettier": "^3.3.3",
+		"rimraf": "^6.0.1",
 		"tailwindcss": "^3.4.6",
 		"typescript": "^5.5.3"
 	}

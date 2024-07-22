@@ -90,6 +90,9 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6
@@ -157,6 +160,9 @@ importers:
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6
@@ -218,6 +224,9 @@ importers:
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6
@@ -279,6 +288,9 @@ importers:
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6
@@ -340,6 +352,9 @@ importers:
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6
@@ -352,6 +367,9 @@ importers:
       '@types/node':
         specifier: latest
         version: 20.14.11
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -419,6 +437,9 @@ importers:
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6
