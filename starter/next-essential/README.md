@@ -32,9 +32,8 @@ choose to git and install dependencies
 - 🎨 Themes: [Next Themes](https://github.com/pacocoursey/next-themes)
 - 💄 Icons: [Radix-Icon](https://www.radix-ui.com/icons)
 - 🎨 UI: [Shadcn UI](https://ui.shadcn.com/)
-- ⚙️ Dev: Github Actions
-- 🛠 Dev: [Husky](https://typicode.github.io/husky/)
-- 📝 Dev: [Changesets](https://github.com/changesets/changesets)
+- ⚙️ Build: Github Actions
+- 🛠 Commit: [Husky](https://typicode.github.io/husky/)
 
 ## Contribute.
 
