@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "vgseven/package-essential"
+      "repo": "template/starter/package-essential"
     }
   ],
   "commit": false,

@@ -1,10 +1,18 @@
 {
   "name": "package-essential",
   "private": "false",
-  "version": "1.0.0",
-  "description": "A package for biomejs",
-  "main": "index.ts",
-  "module": "index.ts",
+  "version": "0.0.1",
+  "description": "Package Essential - An Essential Starter Template for Development of TypeScript Based Packages.",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "bin": {
+    "package-essential": "./dist/index.js"
+  },
   "type": "module",
   "scripts": {
     "build": "tsup",
@@ -23,5 +31,10 @@
     "husky": "^9.0.11",
     "tsup": "^8.2.3",
     "typescript": "^5.5.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
   }
 }
