@@ -1,6 +1,6 @@
-# Next Essential
+# React Essential
 
-Next.js Essential - An Essential Template to build an modern next.js application with all the essentials included.
+React.js Essential - An Essential Template to build an modern react.js application with all the essentials included.
 
 ## Getting Started
 
@@ -18,13 +18,14 @@ enter the name of project and url of this template
 
 ## Features
 
-- ✨ Framework: [Next.js](https://nextjs.org/)
+- ✨ Library: [React.js](https://reactjs.org/)
 - 🚀 Styling: [Tailwind CSS](https://tailwindcss.com/)
 - 💻 Language: [TypeScript](https://www.typescriptlang.org/)
 - 🧹 Linting and Formatting: [Biome.js](https://biomejs.dev/)
 - 🎨 Themes: [Next Themes](https://github.com/pacocoursey/next-themes)
 - 💄 Icons: [Radix-Icon](https://www.radix-ui.com/icons)
-- 🎨 UI: [Shadcn UI](https://ui.shadcn.com/)
+- 🚀 Routing: [Tanstack React Router](https://tanstack.com/router/)
+- ✨ Heading: [Unheaded](https://github.com/unjs/unhead)
 - ⚙️ Build: Github Actions
 - 🛠 Commit: [Husky](https://typicode.github.io/husky/)
 

@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/lib/providers/theme-provider";
 export const metadata: Metadata = {
   title: "Next Essential",
   description:
-    "Next.js Essential Starter Template to start your next next.js project",
+    "Next.js Essential - An Essential Template to build an modern next.js application with all the essentials included.",
   icons: {
     icon: "favicon.png",
   },

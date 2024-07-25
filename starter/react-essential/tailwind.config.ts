@@ -7,9 +7,13 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        geistSans: ["geist"],
+        geistSans: ["geist-sans"],
         geistMono: ["geist-mono"],
       },
+    },
+    colors: {
+      background: "hsl(var(--background))",
+      foreground: "hsl(var(--foreground))",
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,15 +1,14 @@
 {
   "name": "react-essential",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "biome lint --write .",
     "format": "biome format --write .",
-    "clean": "pnpm rimraf node_modules && pnpm rimraf .turbo && pnpm rimraf .next",
-    "preview": "vite preview",
+    "clean": "pnpm rimraf node_modules && pnpm rimraf .next",
     "prepare": "husky",
     "build:prepare": "pnpm run lint && pnpm run format && pnpm run build"
   },
@@ -22,7 +21,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "unhead": "^1.9.16"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",

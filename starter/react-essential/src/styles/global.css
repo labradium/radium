@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-geistMono;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+
+  @font-face {
+    font-family: "geist-sans";
+    src: url("/fonts/Geist-Regular.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "geist-mono";
+    src: url("/fonts/GeistMono-Regular.otf") format("opentype");
+  }
+}

@@ -5,11 +5,7 @@
   "description": "Package Essential - An Essential Starter Template for Development of TypeScript Based Packages.",
   "main": "./src/index.ts",
   "module": "./src/index.ts",
-  "files": [
-    "dist",
-    "README.md",
-    "package.json"
-  ],
+  "files": ["dist", "README.md", "package.json"],
   "bin": {
     "package-essential": "./dist/index.js"
   },
