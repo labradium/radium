@@ -1,57 +1,60 @@
-## Radium Init, Initialize any new project in seconds with custom toolings.
+## Radium, Initialize any new project in seconds with custom toolings.
 
 ### Getting Started
 
-You can install radium `init` globally or use it as executable whenever you need.
+You can install radium globally or use it as executable whenever you need.
 
 #### For Global Installation (Recommended)
 
 ```bash
-bun add -g radium-init
+bun add -g radium-cli
 ```
 ```bash
-npm add -g radium-init
+npm add -g radium-cli
 ```
 ```bash
-pnpm add -g radium-init
+pnpm add -g radium-cli
 ```
 ```bash
-yarn add -g radium-init
+yarn add -g radium-cli
 ```
 #### For Executable
 
 ```bash
-bunx radium-init@latest
+bunx radium-cli@latest
 ```
 ```bash
-npx radium-init@latest
+npx radium-cli@latest
 ```
 ```bash
-pnpm dlx radium-init@latest
+pnpm dlx radium-cli@latest
 ```
 ```bash
-yarn dlx radium-init@latest
+yarn dlx radium-cli@latest
 ```
 ### Usage
 
-`init` comes with two commands currently, `init with` and `init new`.
+`radium` comes with two commands currently, `init` and `describe`.
 
-`init with` is used to initialize a project with an github template, just paste your url - no matter if it's sub-directory of any monorepo or not.
+`radium init` have two options currently `--with` is used to initialize a project with an github template, just paste your url - no matter if it's sub-directory of any monorepo or not and second option `--new` is used to initialize a new project with a specific tooling.
 
-`init with` have two sub-commands `-u` for github url and `-n` for name of the project.
+`radium describe` is used to initialize project by just describing a project in words, and our `Radium AI` will list out the required tools for you to get started and initialize the project for you.
 
-`init new` is used to initialize a new project with a specific tooling, just specify name of project with `-n` flag.
+> `radium describe` is still in alpha stage, so it's not recommended to use it for now. You can hit radium describe but it'll just say hello and exit.
 
 ### Examples
 
 ```bash
-init with -u https://github.com/vgseven/next-essential -n next-essential
+radium init --with
 ```
 
 ```bash
-init new -n next-essential
+radium init --new
 ```
 
+### Upcoming Features
+
+- We're working on `radium add` command to initialize any new tool in existing project.
 ### Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request. 

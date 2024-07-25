@@ -66,9 +66,3 @@ export async function addTheme(projectPath: string): Promise<void> {
   await fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2));
   await fs.copy(themePath, path.join(projectPath));
 }
-
-export async function renameGitIgnore(projectPath: string): Promise<void> {
-  const gitignorePath = path.join(projectPath, "gitignore");
-
-  await fs.rename(gitignorePath, ".gitignore");
-}

@@ -2,14 +2,13 @@ import * as fs from "fs-extra";
 import * as path from "node:path";
 import { getPath } from "@/functions/utils";
 import { spawn } from "node:child_process";
-import { renameGitIgnore } from "@/functions/setting-project";
 
-async function execCommand(command: string, options: { cwd: string }) {
+export async function execCommand(command: string, options: { cwd: string }) {
   return new Promise<void>((resolve, reject) => {
     const process = spawn(command, {
       ...options,
       shell: true,
-      stdio: "inherit",
+      stdio: "ignore",
     });
 
     process.on("close", (code) => {
@@ -58,7 +57,11 @@ export async function copyFiles(projectName: string): Promise<void> {
 
   await fs.ensureDir(destinationDir);
   await fs.copy(sourceDir, destinationDir);
-  await renameGitIgnore(destinationDir);
+
+  const gitIgnorePath = path.join(destinationDir, "gitignore");
+  if (fs.existsSync(gitIgnorePath)) {
+    await fs.rename(gitIgnorePath, ".gitignore");
+  }
 }
 
 export async function packageInstall(
