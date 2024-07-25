@@ -1,3 +1,4 @@
 packages:
   - "starter/*"
   - "upcoming/*"
+  - "!upcoming/turborepo-essential"
