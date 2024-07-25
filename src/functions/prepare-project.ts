@@ -59,8 +59,10 @@ export async function copyFiles(projectName: string): Promise<void> {
   await fs.copy(sourceDir, destinationDir);
 
   const gitIgnorePath = path.join(destinationDir, "gitignore");
+  const destinationGitIgnorePath = path.join(destinationDir, ".gitignore");
+
   if (fs.existsSync(gitIgnorePath)) {
-    await fs.rename(gitIgnorePath, ".gitignore");
+    await fs.rename(gitIgnorePath, destinationGitIgnorePath);
   }
 }
 
