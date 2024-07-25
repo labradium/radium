@@ -1,10 +1,30 @@
 import * as fs from "fs-extra";
 import * as path from "node:path";
 import { getPath } from "@/functions/utils";
-import { exec } from "node:child_process";
-import { promisify } from "node:util";
+import { spawn } from "node:child_process";
+import { renameGitIgnore } from "@/functions/setting-project";
 
-const execAsync = promisify(exec);
+async function execCommand(command: string, options: { cwd: string }) {
+  return new Promise<void>((resolve, reject) => {
+    const process = spawn(command, {
+      ...options,
+      shell: true,
+      stdio: "inherit",
+    });
+
+    process.on("close", (code) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`Command failed with exit code ${code}: ${command}`));
+      }
+    });
+
+    process.on("error", (err) => {
+      reject(err);
+    });
+  });
+}
 
 export async function updatePackageJson(
   projectPath: string,
@@ -30,7 +50,6 @@ export async function updatePackageJson(
 
 export async function copyFiles(projectName: string): Promise<void> {
   const sourceDir = path.join(getPath("dist"), "lib", "base");
-  // const sourceDir = path.join(process.cwd(), "lib", "base");
   const destinationDir = path.join(process.cwd(), projectName);
 
   if (!fs.existsSync(sourceDir)) {
@@ -38,8 +57,8 @@ export async function copyFiles(projectName: string): Promise<void> {
   }
 
   await fs.ensureDir(destinationDir);
-
   await fs.copy(sourceDir, destinationDir);
+  await renameGitIgnore(destinationDir);
 }
 
 export async function packageInstall(
@@ -48,13 +67,12 @@ export async function packageInstall(
 ): Promise<void> {
   const fullPath = path.resolve(process.cwd(), projectPath);
 
-  await execAsync(`${packageManager} install`, { cwd: fullPath });
+  await execCommand(`${packageManager} install`, { cwd: fullPath });
 }
 
 export async function gitInit(projectPath: string): Promise<void> {
   const fullPath = path.resolve(process.cwd(), projectPath);
 
   await fs.access(fullPath);
-
-  await execAsync("git init", { cwd: fullPath });
+  await execCommand("git init", { cwd: fullPath });
 }
