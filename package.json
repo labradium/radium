@@ -36,7 +36,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "bun ./src/index.ts",
+    "dev": "bun run build && node ./dist/index.js",
     "lint": "biome lint . --write",
     "build": "bun ./scripts/build.ts && bun build ./src/index.ts --outdir ./dist --target node --format esm",
     "clean": "bun ./scripts/clean.ts",
