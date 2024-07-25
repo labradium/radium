@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.0.10
+
+### Patch Changes
+
+- [`48da1c1`](https://github.com/silver-company/radium/commit/48da1c18c18ee9148db06b094cd111e65077e13e) Thanks [@vgseven](https://github.com/vgseven)! - core: using spawn instead of exec and gitignore issue on project load issues resolved
+
 ## 0.0.9
 
 ### Patch Changes
