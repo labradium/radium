@@ -39,9 +39,6 @@
       "performance": {
         "recommended": true
       },
-      "nursery": {
-        "recommended": true
-      },
       "suspicious": {
         "recommended": true
       },
