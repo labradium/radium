@@ -27,11 +27,7 @@
   "bin": {
     "radium": "./dist/index.js"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "package.json"
-  ],
+  "files": ["dist", "README.md", "package.json"],
   "engines": {
     "node": ">=18.0.0"
   },

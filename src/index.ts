@@ -3,7 +3,7 @@
 import * as color from "picocolors";
 import { New, With } from "@/commands/init";
 import { program } from "commander";
-// import { getVersion } from "@/functions/utils";
+import { getVersion } from "@/functions/utils";
 import { Describe } from "@/commands/describe";
 
 export async function init() {
@@ -12,11 +12,11 @@ export async function init() {
     process.exit(1);
   }
 
-  // program.version(
-  //   `${getVersion()}`,
-  //   "-v, --version",
-  //   "Output the current version"
-  // );
+  program.version(
+    `${getVersion()}`,
+    "-v, --version",
+    "Output the current version"
+  );
 
   program
     .command("init")
