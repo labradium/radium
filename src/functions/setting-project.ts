@@ -3,7 +3,13 @@ import { getPath } from "@/functions/utils";
 import * as path from "node:path";
 
 export async function addBiome(projectPath: string): Promise<void> {
-  const biomePath = path.join(getPath("lib"), "extras", "biome", "biome.json");
+  const biomePath = path.join(
+    getPath("dist"),
+    "lib",
+    "extras",
+    "biome",
+    "biome.json"
+  );
   // const biomePath = path.join(process.cwd(), "lib", "extras", "biome", "biome.json");
   const pkgPath = path.join(projectPath, "package.json");
   const pkg = JSON.parse(await fs.readFile(pkgPath, "utf-8"));
@@ -25,7 +31,7 @@ export async function addBiome(projectPath: string): Promise<void> {
 }
 
 export async function addShadcnUI(projectPath: string): Promise<void> {
-  const shadcnUIPath = path.join(getPath("lib"), "extras", "shadcn");
+  const shadcnUIPath = path.join(getPath("dist"), "lib", "extras", "shadcn");
   // const shadcnUIPath = path.join(process.cwd(), "lib", "extras", "shadcn");
   const pkgPath = path.join(projectPath, "package.json");
   const pkg = JSON.parse(await fs.readFile(pkgPath, "utf-8"));
@@ -50,7 +56,7 @@ export async function addShadcnUI(projectPath: string): Promise<void> {
 }
 
 export async function addTheme(projectPath: string): Promise<void> {
-  const themePath = path.join(getPath("lib"), "extras", "theme");
+  const themePath = path.join(getPath("dist"), "lib", "extras", "theme");
   // const themePath = path.join(process.cwd(), "lib", "extras", "theme");
   const pkgPath = path.join(projectPath, "package.json");
   const pkg = JSON.parse(await fs.readFile(pkgPath, "utf-8"));

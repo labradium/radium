@@ -1,3 +1,12 @@
-import { $ } from "bun";
+import * as fs from "fs-extra";
 
-await $`rm -rf dist`.quiet();
+async function main() {
+  await fs.remove("./dist");
+
+  fs.copySync("./lib", "./dist/lib");
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

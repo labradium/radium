@@ -1,16 +1,16 @@
 {
-  "name": "radium-init",
+  "name": "radium-cli",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.8",
   "description": "Initialize any new project in seconds with your tools..",
   "license": "MIT",
   "author": "vgseven <contact@vgseven.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/silver-radium/init.git",
-    "directory": "silver-radium/init"
+    "url": "https://github.com/silver-company/radium.git",
+    "directory": "silver-company/radium"
   },
-  "homepage": "https://github.com/silver-radium/init/blob/main/README.md",
+  "homepage": "https://github.com/silver-company/radium/blob/main/README.md",
   "keywords": [
     "radium",
     "react",
@@ -25,16 +25,9 @@
   "type": "module",
   "exports": "./dist/index.js",
   "bin": {
-    "radium-init": "./dist/index.js",
-    "init": "./dist/index.js",
     "radium": "./dist/index.js"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "package.json",
-    "lib"
-  ],
+  "files": ["dist", "README.md", "package.json"],
   "engines": {
     "node": ">=18.0.0"
   },
@@ -68,9 +61,9 @@
     "@changesets/cli": "^2.27.7",
     "@types/bun": "^1.1.6",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.14.11",
+    "@types/node": "^20.14.12",
     "husky": "^9.1.1",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "publishConfig": {
     "access": "public",

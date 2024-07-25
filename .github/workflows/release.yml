@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   release:
-    if: ${{ github.repository_owner == 'silver-radium' }}
+    if: ${{ github.repository_owner == 'silver-company' }}
     name: Release
     runs-on: ubuntu-latest
 

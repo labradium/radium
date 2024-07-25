@@ -29,7 +29,7 @@ export async function updatePackageJson(
 }
 
 export async function copyFiles(projectName: string): Promise<void> {
-  const sourceDir = path.join(getPath("lib"), "base");
+  const sourceDir = path.join(getPath("dist"), "lib", "base");
   // const sourceDir = path.join(process.cwd(), "lib", "base");
   const destinationDir = path.join(process.cwd(), projectName);
 
@@ -52,8 +52,6 @@ export async function packageInstall(
 }
 
 export async function gitInit(projectPath: string): Promise<void> {
-  const execAsync = promisify(exec);
-
   const fullPath = path.resolve(process.cwd(), projectPath);
 
   await fs.access(fullPath);
