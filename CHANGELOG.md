@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.1.0
+
+### Minor Changes
+
+- [`f46f8ad`](https://github.com/silver-company/radium/commit/f46f8ade18b476bc2dc24e7fbbd6f5cb474b4e1d) Thanks [@vgseven](https://github.com/vgseven)! - core: describe command configured and console logs issues resolved
+
 ## 0.0.10
 
 ### Patch Changes
