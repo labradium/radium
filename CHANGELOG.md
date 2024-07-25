@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.1.2
+
+### Patch Changes
+
+- [`2ec7369`](https://github.com/silver-company/radium/commit/2ec7369be24c890b98a0644356869ae8f28d0bf4) Thanks [@vgseven](https://github.com/vgseven)! - core: gitignore path issues resolved
+
 ## 0.1.1
 
 ### Patch Changes
