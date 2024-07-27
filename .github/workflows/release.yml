@@ -13,7 +13,7 @@ jobs:
   release:
     if: ${{ github.repository_owner == 'silver-company' }}
     name: Release
-    runs-on: upnpmtu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository code
