@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.1.4
+
+### Patch Changes
+
+- [`2e991de`](https://github.com/silver-company/radium/commit/2e991de4eecac98b4e9b9d2ee4b564ca8dba76a4) Thanks [@vgseven](https://github.com/vgseven)! - core: path issues resolved
+
 ## 0.1.3
 
 ### Patch Changes
