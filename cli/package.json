@@ -27,7 +27,12 @@
   "bin": {
     "radium": "./dist/index.js"
   },
-  "files": ["dist", "README.md", "package.json", "lib"],
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "lib"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },
@@ -38,10 +43,6 @@
     "clean": "pnpm rimraf node_modules && pnpm rimraf .turbo && pnpm rimraf dist",
     "format": "biome format . --write",
     "build:prepare": "pnpm run format && pnpm run lint && pnpm run build",
-    "release": "changeset version",
-    "pub:beta": "pnpm run build && npm publish --tag beta",
-    "pub:next": "pnpm run build && npm publish --tag next",
-    "pub:release": "pnpm run build && npm publish",
     "prepare": "husky",
     "dev:prepare": "git pull origin main && pnpm i"
   },
