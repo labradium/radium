@@ -48,7 +48,7 @@ export async function updatePackageJson(
 }
 
 export async function copyFiles(projectName: string): Promise<void> {
-  const sourceDir = path.join(getPath("dist"), "lib", "base");
+  const sourceDir = path.join(getPath("lib"), "base");
   const destinationDir = path.join(process.cwd(), projectName);
 
   if (!fs.existsSync(sourceDir)) {
