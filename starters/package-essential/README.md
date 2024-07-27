@@ -25,6 +25,15 @@ enter the name of project and url of this template
 - 🛠 Commit: [Husky](https://typicode.github.io/husky/)
 - 📦 Package Manager: [pnpm](https://pnpm.io/)
 
+## Note
+
+We recommend importing of the package as following if you're importing it as default or everything imports.
+
+```typescript
+import { default as package } from "package";
+```
+This will help you to avoid importing issues of cjs and esm moudles at build time.
+
 ## Contribute.
 
 Contributions are always welcome! Please submit a pull request or open an issue to discuss your ideas.

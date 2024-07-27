@@ -5,7 +5,7 @@
     "module": "esnext",
     "moduleDetection": "force",
     "allowJs": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
@@ -16,9 +16,10 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
     "checkJs": false,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "@/*": ["src/*"]
     }
   }
 }
