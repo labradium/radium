@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "biomejs.biome",
+        "redhat.vscode-yaml",
+        "vscode.json-language-features",
+        "bierner.markdown-preview-github-styles",
+        "YoavBls.pretty-ts-errors"
+    ]
+}

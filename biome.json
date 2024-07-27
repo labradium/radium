@@ -10,11 +10,15 @@
     "attributePosition": "auto",
     "ignore": [
       ".vscode",
+      ".next",
+      ".vercel",
+      ".env",
       ".changeset",
       ".husky",
       "node_modules",
       "build",
-      "dist"
+      "dist",
+      "routeTree.gen.ts"
     ]
   },
   "organizeImports": {
@@ -27,16 +31,16 @@
       "correctness": {
         "noUnusedVariables": "warn"
       },
-      "security": {
+      "style": {
+        "recommended": true
+      },
+      "complexity": {
         "recommended": true
       },
       "performance": {
         "recommended": true
       },
-      "style": {
-        "recommended": true
-      },
-      "complexity": {
+      "nursery": {
         "recommended": true
       },
       "suspicious": {
@@ -44,10 +48,16 @@
       },
       "a11y": {
         "recommended": true
+      },
+      "security": {
+        "recommended": true
       }
     },
     "ignore": [
       ".vscode",
+      ".next",
+      ".vercel",
+      ".env",
       ".changeset",
       ".husky",
       "node_modules",
