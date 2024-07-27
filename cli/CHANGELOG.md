@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.1.3
+
+### Patch Changes
+
+- [`9ad4268`](https://github.com/silver-company/radium/commit/9ad42681f716a706857baaed48b99dd1b7e8aefa) Thanks [@vgseven](https://github.com/vgseven)! - core: migrated to pnpm and package issues resolved
+
 ## 0.1.2
 
 ### Patch Changes
