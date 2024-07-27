@@ -18,7 +18,8 @@
       "node_modules",
       "build",
       "dist",
-      "routeTree.gen.ts"
+      "routeTree.gen.ts",
+      "templates/turborepo-essential/*"
     ]
   },
   "organizeImports": {
@@ -62,7 +63,9 @@
       ".husky",
       "node_modules",
       "build",
-      "dist"
+      "dist",
+      "templates/turborepo-essential/*",
+      "routeTree.gen.ts"
     ]
   },
   "javascript": {
