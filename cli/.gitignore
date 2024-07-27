@@ -1,0 +1,7 @@
+# ignore files for git and github commits
+
+# modules files and folders
+node_modules
+
+# build files and folders
+dist

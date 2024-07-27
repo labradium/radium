@@ -1,4 +1,6 @@
 packages:
-  - "starter/*"
-  - "upcoming/*"
-  - "!upcoming/turborepo-essential"
+  - "cli"
+  - "templates/*"
+  - "!templates/upcoming/turborepo-essential"
+  - "starters/*"
+  - "stacks/*"

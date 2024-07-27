@@ -1,5 +1,5 @@
 {
-  "name": "templates",
+  "name": "radium",
   "private": true,
   "type": "module",
   "scripts": {
@@ -23,7 +23,7 @@
     "turbo": "^2.0.9"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": "^20.0.0"
   },
   "packageManager": "pnpm@9.6.0"
 }
