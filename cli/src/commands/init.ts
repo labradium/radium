@@ -1,7 +1,15 @@
 import { copyFiles } from "@/functions/prepare-project";
-import * as terminal from "@clack/prompts";
-import * as fs from "node:fs";
-import * as path from "node:path";
+import {
+  spinner,
+  text,
+  note,
+  confirm,
+  select,
+  cancel,
+  group,
+} from "@clack/prompts";
+import fs from "node:fs";
+import path from "node:path";
 import { packageInstall } from "@/functions/prepare-project";
 import { gitInit } from "@/functions/prepare-project";
 import { updatePackageJson } from "@/functions/prepare-project";
@@ -11,12 +19,12 @@ import { checkURL, getRepoInfo } from "@/functions/utils";
 import { parserName, type RepoInfo } from "@/types/types";
 
 export async function New() {
-  const s = terminal.spinner();
+  const s = spinner();
 
-  const newOptions = await terminal.group(
+  const newOptions = await group(
     {
       projectName: () =>
-        terminal.text({
+        text({
           message: "What is the name of your project?",
           placeholder: "radium",
           validate(value) {
@@ -27,38 +35,35 @@ export async function New() {
         }),
 
       noteTS: () =>
-        terminal.note(
-          "We use TypeScript by default..",
-          "For Better Type Safety"
-        ),
+        note("We use TypeScript by default..", "For Better Type Safety"),
 
       noteNX: () =>
-        terminal.note(
+        note(
           "Next.js is the only supported framework, Soon React and others.",
           "Currently"
         ),
       noteBase: () =>
-        terminal.note(
+        note(
           "Base Next.js Template consist TailwindCSS and Geist Font..",
           "Base Template Initialized"
         ),
       addBiome: () =>
-        terminal.confirm({
+        confirm({
           message: "Do You want to add biome?",
           initialValue: true,
         }),
       addShadcnUI: () =>
-        terminal.confirm({
+        confirm({
           message: "Do You want to add shadcn-ui?",
           initialValue: true,
         }),
       addTheme: () =>
-        terminal.confirm({
+        confirm({
           message: "Do You want to add theme?",
           initialValue: true,
         }),
       choosePackageManager: () =>
-        terminal.select({
+        select({
           message: "Select Package Manager",
           initialValue: "bun",
           options: [
@@ -81,19 +86,19 @@ export async function New() {
           ],
         }),
       install: () =>
-        terminal.confirm({
+        confirm({
           message: "Install dependencies?",
           initialValue: false,
         }),
       git: () =>
-        terminal.confirm({
+        confirm({
           message: "Initialize Git?",
           initialValue: false,
         }),
     },
     {
       onCancel: () => {
-        terminal.cancel("Operation cancelled.");
+        cancel("Operation cancelled.");
         process.exit(0);
       },
     }
@@ -147,21 +152,21 @@ export async function New() {
       message = `cd ${newOptions.projectName} \n${newOptions.choosePackageManager} run dev`;
     }
 
-    terminal.note(message, "Happy Coding!");
+    note(message, "Happy Coding!");
     process.exit(0);
   } catch (error) {
-    terminal.note(`Error: ${error}`, "Project Initialization Failed");
+    note(`Error: ${error}`, "Project Initialization Failed");
     process.exit(1);
   }
 }
 
 export async function With() {
-  const s = terminal.spinner();
+  const s = spinner();
 
-  const withOptions = await terminal.group(
+  const withOptions = await group(
     {
       projectName: () =>
-        terminal.text({
+        text({
           message: "What is the name of your project?",
           placeholder: "radium",
           validate(value) {
@@ -171,7 +176,7 @@ export async function With() {
           },
         }),
       templateURL: () =>
-        terminal.text({
+        text({
           message: "What is the URL of the template?",
           placeholder: "https://github.com/vgseven/next-essential",
           validate(value) {
@@ -180,10 +185,9 @@ export async function With() {
             }
           },
         }),
-      note: () =>
-        terminal.note("Project with existing template...", "Setting up"),
+      note: () => note("Project with existing template...", "Setting up"),
       choosePackageManager: () =>
-        terminal.select({
+        select({
           message: "Choose Package Manager",
           initialValue: "bun",
           options: [
@@ -206,19 +210,19 @@ export async function With() {
           ],
         }),
       install: () =>
-        terminal.confirm({
+        confirm({
           message: "Install dependencies?",
           initialValue: false,
         }),
       git: () =>
-        terminal.confirm({
+        confirm({
           message: "Initialize Git?",
           initialValue: false,
         }),
     },
     {
       onCancel: () => {
-        terminal.cancel("Operation cancelled.");
+        cancel("Operation cancelled.");
         process.exit(0);
       },
     }
@@ -231,7 +235,7 @@ export async function With() {
     if (urlCheck) {
       repo = getRepoInfo(withOptions.templateURL);
     } else {
-      terminal.note("Invalid URL", "Project Initialization Failed");
+      note("Invalid URL", "Project Initialization Failed");
       process.exit(1);
     }
 
@@ -271,10 +275,10 @@ export async function With() {
       message = `cd ${withOptions.projectName} \n${withOptions.choosePackageManager} run dev`;
     }
 
-    terminal.note(message, "Happy Coding!");
+    note(message, "Happy Coding!");
     process.exit(0);
   } catch (error) {
-    terminal.note(`Error: ${error}`, "Project Initialization Failed");
+    note(`Error: ${error}`, "Project Initialization Failed");
     process.exit(1);
   }
 }

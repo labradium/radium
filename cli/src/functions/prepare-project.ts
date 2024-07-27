@@ -1,5 +1,5 @@
-import * as fs from "fs-extra";
-import * as path from "node:path";
+import { default as fs } from "fs-extra";
+import { default as path } from "node:path";
 import { getPath } from "@/functions/utils";
 import { spawn } from "node:child_process";
 

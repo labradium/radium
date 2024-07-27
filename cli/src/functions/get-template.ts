@@ -1,15 +1,15 @@
 import { Octokit } from "@octokit/core";
 import { paginateRest } from "@octokit/plugin-paginate-rest";
 import { restEndpointMethods } from "@octokit/plugin-rest-endpoint-methods";
-import * as axios from "axios";
-import * as fs from "fs-extra";
-import * as path from "node:path";
+import { default as axios } from "axios";
+import { default as fs } from "fs-extra";
+import { default as path } from "node:path";
 
 const MyOctokit = Octokit.plugin(paginateRest, restEndpointMethods);
 const octokit = new MyOctokit();
 
 async function downloadFile(url: string, filePath: string) {
-  const response = await axios.default.get(url, {
+  const response = await axios.get(url, {
     responseType: "arraybuffer",
   });
   await fs.outputFile(filePath, response.data);

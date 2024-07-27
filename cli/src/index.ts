@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import * as color from "picocolors";
+import { default as color } from "picocolors";
 import { New, With } from "@/commands/init";
 import { program } from "commander";
 import { getVersion } from "@/functions/utils";
