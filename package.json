@@ -15,9 +15,14 @@
     "root:prepare": "pnpm run root:format && pnpm run root:lint && pnpm run build:prepare",
     "prepare": "husky",
     "build:prepare": "pnpm run lint && pnpm run format && pnpm run build",
-    "dev:prepare": "git pull origin main && pnpm i"
+    "dev:prepare": "git pull origin main && pnpm i",
+    "release": "changeset version",
+    "pub:beta": "cd cli && pnpm pub:beta",
+    "pub:release": "cd cli && pnpm pub:release"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7",
     "@biomejs/biome": "1.8.3",
     "husky": "^9.1.3",
     "rimraf": "^6.0.1",
