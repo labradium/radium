@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome lint --write .",
+    "type-check": "tsc --noEmit",
     "format": "biome format --write .",
     "clean": "pnpm rimraf node_modules && pnpm rimraf .next",
     "prepare": "husky",
@@ -28,7 +29,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
-    "@types/node": "^20.14.12",
+    "@types/node": "^22.0.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",

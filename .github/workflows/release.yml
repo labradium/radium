@@ -35,8 +35,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run build
-        run: pnpm run build:prepare
+      - name: Performing Type Check
+        run: pnpm run type-check
+
+      - name: Performing Lint
+        run: pnpm run lint
+
+      - name: Performing Format
+        run: pnpm run format
+
+      - name: Performing Build
+        run: pnpm run build
 
       - name: Check for existing release PR
         id: check_pr

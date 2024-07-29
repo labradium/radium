@@ -8,10 +8,7 @@
         "editor.defaultFormatter": "biomejs.biome"
     },
     "[json]": {
-        "editor.quickSuggestions": {
-            "strings": true
-        },
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "biomejs.biome"
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "biomejs.biome"
@@ -20,6 +17,6 @@
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[css]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
+        "editor.defaultFormatter": "biomejs.biome"
     }
 }

@@ -10,6 +10,7 @@
     "attributePosition": "auto",
     "ignore": [
       ".vscode",
+      ".next",
       ".vercel",
       ".env",
       ".changeset",
@@ -39,9 +40,6 @@
       "performance": {
         "recommended": true
       },
-      "nursery": {
-        "recommended": true
-      },
       "suspicious": {
         "recommended": true
       },
@@ -54,6 +52,7 @@
     },
     "ignore": [
       ".vscode",
+      ".next",
       ".vercel",
       ".env",
       ".changeset",
@@ -75,6 +74,26 @@
       "bracketSameLine": false,
       "quoteStyle": "double",
       "attributePosition": "auto"
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 80,
+      "lineEnding": "lf",
+      "quoteStyle": "double"
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 80,
+      "lineEnding": "lf",
+      "trailingCommas": "none"
     }
   }
 }

@@ -11,11 +11,12 @@ export async function execCommand(command: string, options: { cwd: string }) {
       stdio: "ignore",
     });
 
-    process.on("close", (code) => {
+    process.on("exit", (code) => {
       if (code === 0) {
         resolve();
       } else {
         reject(new Error(`Command failed with exit code ${code}: ${command}`));
+        process.kill();
       }
     });
 
