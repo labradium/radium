@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.2.2
+
+### Patch Changes
+
+- [`a6767d3`](https://github.com/radiumlabs/radium/commit/a6767d31ead37aa19a45afee2751876e87639adb) Thanks [@vgseven](https://github.com/vgseven)! - core: removed publish and version command from package.json to avoid conflict while publishing using changeset at workflows
+
 ## 0.2.0
 
 ### Minor Changes
