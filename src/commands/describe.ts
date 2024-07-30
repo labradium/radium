@@ -1,5 +1,5 @@
 import { intro, spinner, note, outro } from "@clack/prompts";
-import color from "picocolors";
+import { default as color } from "picocolors";
 import { setTimeout } from "node:timers/promises";
 
 export async function Describe() {

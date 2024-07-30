@@ -8,8 +8,8 @@ import {
   cancel,
   group,
 } from "@clack/prompts";
-import fs from "node:fs";
-import path from "node:path";
+import { default as fs } from "node:fs";
+import { default as path } from "node:path";
 import { packageInstall } from "@/functions/prepare-project";
 import { gitInit } from "@/functions/prepare-project";
 import { updatePackageJson } from "@/functions/prepare-project";
