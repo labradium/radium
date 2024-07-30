@@ -1,7 +1,7 @@
 {
   "name": "radium-cli",
   "private": false,
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Initialize any new project in seconds with your tools..",
   "license": "MIT",
   "author": "vgseven <contact@vgseven.com>",
@@ -27,7 +27,12 @@
   "bin": {
     "radium": "./dist/index.js"
   },
-  "files": ["dist", "README.md", "package.json", "lib"],
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "lib"
+  ],
   "engines": {
     "node": ">=20.0.0"
   },

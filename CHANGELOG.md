@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.1.5
+
+### Patch Changes
+
+- [`1169337`](https://github.com/radiumlabs/radium/commit/1169337985679e6c53accb3938ba74823b5b70aa) Thanks [@vgseven](https://github.com/vgseven)! - chore: dep issues resolved
+
 ## 0.1.4
 
 ### Patch Changes
