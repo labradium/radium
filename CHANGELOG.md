@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.1.6
+
+### Patch Changes
+
+- [`d345e2e`](https://github.com/radiumlabs/radium/commit/d345e2ec45bf057ef30ecb2f299a8af28d7f451d) Thanks [@vgseven](https://github.com/vgseven)! - core: patch issues resolved
+
 ## 0.1.5
 
 ### Patch Changes
