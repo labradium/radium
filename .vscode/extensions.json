@@ -1,6 +1,8 @@
 {
   "recommendations": [
-    "bradlc.vscode-tailwindcss",
-    "yoavbls.pretty-ts-errors"
+    "yoavbls.pretty-ts-errors",
+    "biomejs.biome",
+    "bierner.markdown-preview-github-styles",
+    "redhat.vscode-yaml",
   ]
 }

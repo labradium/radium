@@ -1,21 +1,7 @@
-# Dependencies
+# ignore files for git and github commits
+
+# modules files and folders
 node_modules
 
-# Local env files
-.env
-.env.local
-
-# Testing
-coverage
-
-# Turbo
-.turbo
-
-# Vercel
-.vercel
-
-# Build Outputs
-.next/
-out/
-build
+# build files and folders
 dist
