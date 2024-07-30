@@ -5,3 +5,12 @@ node_modules
 
 # build files and folders
 dist
+build
+
+# misc files and folders
+
+.turbo
+.next
+.vercel
+.env
+.env.local

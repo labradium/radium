@@ -18,7 +18,8 @@
       "node_modules",
       "build",
       "dist",
-      "routeTree.gen.ts"
+      "routeTree.gen.ts",
+      "templates/turborepo-essential/*"
     ]
   },
   "organizeImports": {
@@ -60,6 +61,7 @@
       "node_modules",
       "build",
       "dist",
+      "templates/turborepo-essential/*",
       "routeTree.gen.ts"
     ]
   },
