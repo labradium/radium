@@ -1,5 +1,11 @@
 # radium-cli
 
+## 0.2.0
+
+### Minor Changes
+
+- [`8f11aba`](https://github.com/radiumlabs/radium/commit/8f11aba237acd98f85dfe2b590c5745f0fe0a914) Thanks [@vgseven](https://github.com/vgseven)! - core: workflow issues resolved
+
 ## 0.1.6
 
 ### Patch Changes
