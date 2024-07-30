@@ -27,7 +27,12 @@
   "bin": {
     "radium": "./dist/index.js"
   },
-  "files": ["dist", "README.md", "package.json", "lib"],
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "lib"
+  ],
   "engines": {
     "node": ">=20.0.0"
   },
@@ -58,6 +63,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.0.0",
     "husky": "^9.1.4",
