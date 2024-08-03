@@ -3,12 +3,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
 const underlineHoverVariants = cva(
-  "inline-flex items-center rounded-md px-1.5 py-0.5 text-inherit font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-colors duration-700 ease-in-out hover:cursor-pointer",
+  "inline-flex items-center rounded px-1.5 py-0.5 text-inherit font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-colors duration-700 ease-in-out hover:cursor-pointer",
   {
     variants: {
       variant: {
-        default:
-          "border-b-2 border-accent hover:bg-accent hover:text-accent-foreground",
+        default: "border-b-2 border-black hover:bg-black hover:text-white",
         secondary:
           "border-b-2 border-secondary hover:bg-secondary hover:text-secondary-foreground",
       },

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev": "turbo dev --filter=radium-web",
     "lint": "turbo lint",
     "format": "turbo format",
     "test": "turbo test",

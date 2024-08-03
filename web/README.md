@@ -1,17 +1,97 @@
-# Radium, Empowering Developers To Rapidly Ship Projects.
+# Radium, Initialize any new project in seconds with custom toolings
 
-Introducing Radium – the ultimate platform for developers, whether you're just starting out or a pro. Radium gives you everything you need to make coding easier and faster. Say hello to Radium and make coding a breeze! Radium offers Init, Starter and Templates to kick off your project at speed of light..
+## Introduction
 
-## Products
+Radium, Rapidly Ship Projects. Radium offers CLI, Templates, Starters, and Stacks to kick off your next project at speed of light and best architecture.
 
-### Init
+[Radium CLI](#radium-cli) :- Initialize any new project in seconds with custom toolings.
 
-Init is a powerful tool that helps you create a new project with ease. Init is an CLI tool to initialize a new project. Currently we support only the existing templates or starters but we're working on AI and Custom Tools configurations.
+[Radium Templates](#radium-templates) :- Ready to ship templates that you can use to kickstart your next project.
 
-### Starter
+[Radium Stacks](#radium-stacks) :- Perfectly configured stacks that you can use to kickstart your next project.
 
-Starter Offers an wide range of starter templates, Currently we support only React and Next.js but we're working on adding more frameworks and templates.
+[Radium Starters](#radium-starters) :- Essential starters that you can use to kickstart your next project.
 
-### Templates
+### Radium CLI
 
-Templates Offers an wide range of ready-to-use templates, Currently we support only React and Next.js but we're working on adding more frameworks and templates.
+You can install radium globally or use it as executable whenever you need.
+
+For Global Installation (Recommended)
+
+```bash
+bun add -g radium-cli
+```
+
+```bash
+npm add -g radium-cli
+```
+
+```bash
+pnpm add -g radium-cli
+```
+
+```bash
+yarn add -g radium-cli
+```
+
+For Executable
+
+```bash
+bunx radium-cli@latest
+```
+
+```bash
+npx radium-cli@latest
+```
+
+```bash
+pnpm dlx radium-cli@latest
+```
+
+```bash
+yarn dlx radium-cli@latest
+```
+
+#### Usage
+
+`radium` comes with two commands currently, `init` and `describe`.
+
+`radium init` have two options currently `--with` is used to initialize a project with an github template, just paste your url - no matter if it's sub-directory of any monorepo or not and second option `--new` is used to initialize a new project with a custom tooling.
+
+`radium describe` is used to initialize project by just describing a project in words, and our `Radium AI` will list out the required tools for you to get started and initialize the project for you.
+
+> `radium describe` is still in alpha stage, so it's not recommended to use it for now. You can hit `radium describe` but it'll just say hello and exit.
+
+#### Examples
+
+```bash
+radium init --with
+```
+
+```bash
+radium init --new
+```
+
+### Radium Templates
+
+Ready to ship templates that you can use to kickstart your next project. Checkout Radium Templates [here](https://github.com/radiumlabs/radium/blob/main/TEMPLATES.md).
+
+### Radium Stacks
+
+Perfectly configured stacks that you can use to kickstart your next project. Checkout Radium Stacks [here](https://github.com/radiumlabs/radium/blob/main/STACKS.md).
+
+### Radium Starters
+
+Essential starters that you can use to kickstart your next project. Checkout Radium Starters [here](https://github.com/radiumlabs/radium/blob/main/STARTERS.md).
+
+### Upcoming Features
+
+- `radium add` :- Add any new tool in existing project.
+- `radium migrate` :- Migrate existing project to any new tool.
+- `radium stack` :- Use Stacks to kickstart your next project.
+- `radium starter` :- Use Starters to kickstart your next project.
+- `radium template` :- Use Templates to kickstart your next project.
+
+### Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.

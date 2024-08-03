@@ -1,6 +1,6 @@
-## Radium, Initialize any new project in seconds with custom toolings.
+# Radium, Initialize any new project in seconds with custom toolings
 
-### Introduction
+## Introduction
 
 Radium, Rapidly Ship Projects. Radium offers CLI, Templates, Starters, and Stacks to kick off your next project at speed of light and best architecture.
 
@@ -16,34 +16,42 @@ Radium, Rapidly Ship Projects. Radium offers CLI, Templates, Starters, and Stack
 
 You can install radium globally or use it as executable whenever you need.
 
-##### For Global Installation (Recommended)
+For Global Installation (Recommended)
 
 ```bash
 bun add -g radium-cli
 ```
+
 ```bash
 npm add -g radium-cli
 ```
+
 ```bash
 pnpm add -g radium-cli
 ```
+
 ```bash
 yarn add -g radium-cli
 ```
-##### For Executable
+
+For Executable
 
 ```bash
 bunx radium-cli@latest
 ```
+
 ```bash
 npx radium-cli@latest
 ```
+
 ```bash
 pnpm dlx radium-cli@latest
 ```
+
 ```bash
 yarn dlx radium-cli@latest
 ```
+
 #### Usage
 
 `radium` comes with two commands currently, `init` and `describe`.

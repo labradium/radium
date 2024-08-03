@@ -4,14 +4,14 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Radium - Empowering Developers To Rapidly Ship Projects",
-  description: "An Essential Next.js Starter by Radium.",
+  title: "Radium",
+  description: "Rapidly Ship Projects",
   icons: {
     icon: "favicon.png",
   },
   openGraph: {
-    title: "Next.js Essential Starter by Radium",
-    description: "An Essential Next.js Starter by Radium.",
+    title: "Radium",
+    description: "Rapidly Ship Projects",
     url: "https://radium.vgseven.com",
     siteName: "Radium",
     images: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Next.js Essential Starter by Radium",
-    description: "An Essential Next.js Starter by Radium.",
+    title: "Radium",
+    description: "Rapidly Ship Projects",
     images: [
       "https://odouepjkxheu5esn.public.blob.vercel-storage.com/silvercompany/make-happen.jpg",
     ],
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${GeistSansFont.variable} ${GeistMonoFont.variable} font-geistMono`}
+      className={`${GeistSansFont.variable} ${GeistMonoFont.variable} font-geistSans`}
     >
       <body>{children}</body>
     </html>
