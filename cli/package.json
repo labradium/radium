@@ -52,7 +52,7 @@
     "@octokit/core": "^6.1.2",
     "@octokit/plugin-paginate-rest": "^11.3.3",
     "@octokit/plugin-rest-endpoint-methods": "^13.2.4",
-    "axios": "^1.7.2",
+    "axios": "^1.7.3",
     "commander": "^12.1.0",
     "fs-extra": "^11.2.0",
     "octokit": "^4.0.2",
@@ -63,10 +63,10 @@
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.0.0",
+    "@types/node": "^22.1.0",
     "husky": "^9.1.4",
     "rimraf": "^6.0.1",
-    "tsup": "^8.2.3",
+    "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "zod": "^3.23.8"
   }
